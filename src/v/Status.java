@@ -45,6 +45,32 @@ public class Status extends javax.swing.JPanel {
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_currentstock = new javax.swing.JTable();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        lbl_cash_total = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        lbl_bank_total = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        lbl_total_cash = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        lbl_supplier_credit = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        lbl_customer_credit = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        lbl_route_credit = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        lbl_total_credit_receive = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        lbl_balance = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -129,8 +155,150 @@ public class Status extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(2, 2, 2, 2)));
+        jPanel12.setPreferredSize(new java.awt.Dimension(400, 250));
+        jPanel12.setLayout(new java.awt.GridLayout(8, 3, 5, 5));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Cash Total");
+        jLabel1.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel1);
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel13);
+
+        lbl_cash_total.setBackground(new java.awt.Color(204, 255, 204));
+        lbl_cash_total.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lbl_cash_total.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_cash_total.setOpaque(true);
+        lbl_cash_total.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(lbl_cash_total);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setText("Bank Total");
+        jLabel9.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel9);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel8);
+
+        lbl_bank_total.setBackground(new java.awt.Color(204, 255, 204));
+        lbl_bank_total.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lbl_bank_total.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_bank_total.setOpaque(true);
+        lbl_bank_total.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(lbl_bank_total);
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setText("Money Total");
+        jPanel12.add(jLabel12);
+        jPanel12.add(jLabel22);
+
+        lbl_total_cash.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_total_cash.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_total_cash.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 0, 0)));
+        lbl_total_cash.setOpaque(true);
+        jPanel12.add(lbl_total_cash);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setText("Suppliers Credit");
+        jLabel7.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel7);
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel16);
+
+        lbl_supplier_credit.setBackground(new java.awt.Color(255, 204, 204));
+        lbl_supplier_credit.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lbl_supplier_credit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_supplier_credit.setOpaque(true);
+        lbl_supplier_credit.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(lbl_supplier_credit);
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel18.setText("Customer Credit");
+        jLabel18.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel18);
+
+        lbl_customer_credit.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_customer_credit.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lbl_customer_credit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_customer_credit.setOpaque(true);
+        lbl_customer_credit.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(lbl_customer_credit);
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel11);
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel17.setText("Route Credit");
+        jLabel17.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel17);
+
+        lbl_route_credit.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_route_credit.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lbl_route_credit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_route_credit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        lbl_route_credit.setOpaque(true);
+        lbl_route_credit.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(lbl_route_credit);
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel20);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel10.setText("Total Credit Receive");
+        jLabel10.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel10);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel14);
+
+        lbl_total_credit_receive.setBackground(new java.awt.Color(255, 204, 204));
+        lbl_total_credit_receive.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lbl_total_credit_receive.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_total_credit_receive.setOpaque(true);
+        lbl_total_credit_receive.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(lbl_total_credit_receive);
+
+        jLabel15.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel15);
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(jLabel19);
+
+        lbl_balance.setBackground(new java.awt.Color(204, 204, 255));
+        lbl_balance.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lbl_balance.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_balance.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 0, 0)));
+        lbl_balance.setOpaque(true);
+        lbl_balance.setPreferredSize(new java.awt.Dimension(0, 25));
+        jPanel12.add(lbl_balance);
+
+        jPanel11.add(jPanel12);
+
         jPanel2.setBackground(new java.awt.Color(244, 244, 244));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Employee Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), c.View.getInstance().colorTheme)); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Today Income/Expend Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), c.View.getInstance().colorTheme)); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setMaximumSize(new java.awt.Dimension(250, 2147483647));
@@ -197,8 +365,10 @@ public class Status extends javax.swing.JPanel {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        jPanel11.add(jPanel2);
+
         jPanel6.setBackground(new java.awt.Color(244, 244, 244));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Employee Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), c.View.getInstance().colorTheme)); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Customer Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), c.View.getInstance().colorTheme)); // NOI18N
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setMaximumSize(new java.awt.Dimension(250, 2147483647));
@@ -263,6 +433,8 @@ public class Status extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel11.add(jPanel6);
+
         jPanel9.setBackground(new java.awt.Color(244, 244, 244));
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Employee Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), c.View.getInstance().colorTheme)); // NOI18N
 
@@ -304,6 +476,8 @@ public class Status extends javax.swing.JPanel {
                 .addContainerGap(64, Short.MAX_VALUE))
         );
 
+        jPanel11.add(jPanel9);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -311,14 +485,8 @@ public class Status extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 117, Short.MAX_VALUE)))
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 1061, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -326,12 +494,9 @@ public class Status extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -342,14 +507,14 @@ public class Status extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1009, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1046, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -363,13 +528,31 @@ public class Status extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    public javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -380,11 +563,19 @@ public class Status extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JLabel lbl_balance;
+    public javax.swing.JLabel lbl_bank_total;
+    public javax.swing.JLabel lbl_cash_total;
     public javax.swing.JLabel lbl_customer_count;
+    public javax.swing.JLabel lbl_customer_credit;
     public javax.swing.JLabel lbl_customer_total_credit;
     public javax.swing.JLabel lbl_employee_count;
     public javax.swing.JLabel lbl_expend_today;
     public javax.swing.JLabel lbl_income_today;
+    public javax.swing.JLabel lbl_route_credit;
+    public javax.swing.JLabel lbl_supplier_credit;
+    public javax.swing.JLabel lbl_total_cash;
+    public javax.swing.JLabel lbl_total_credit_receive;
     public javax.swing.JTable tbl_currentstock;
     // End of variables declaration//GEN-END:variables
 }

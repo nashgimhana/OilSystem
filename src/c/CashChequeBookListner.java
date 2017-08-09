@@ -1321,7 +1321,7 @@ public class CashChequeBookListner extends MouseAdapter implements ComponentList
     private void loadBankSummory() {
         if (this.Cash_Check_Book != null) {
             m.Bank bank = new m.Bank();
-            this.Cash_Check_Book.lbl_bank_total.setText(bank.getTotalCredit() + "");
+            this.Cash_Check_Book.lbl_bank_total.setText(bank.getTotal() + "");
             List<pojo.Bank> list = bank.getAll();
             if (list != null && !list.isEmpty()) {
                 DefaultTableModel dtm = (DefaultTableModel) this.Cash_Check_Book.tbl_bank_current_status.getModel();

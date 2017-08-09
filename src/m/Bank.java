@@ -94,7 +94,7 @@ public class Bank {
         }
     }
     
-    public double getTotalCredit(){
+    public double getTotal(){
         Session session = conn.NewHibernateUtil.getSessionFactory().openSession();
         try {
             List list = session.createCriteria(pojo.Bank.class).setProjection(Projections.sum("amount")).list();
