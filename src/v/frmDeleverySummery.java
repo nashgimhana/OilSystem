@@ -14,6 +14,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
+import m.DeliverDetail;
 import m.ValueValidation;
 import pojo.DealType;
 
@@ -554,6 +555,11 @@ public class frmDeleverySummery extends javax.swing.JFrame {
 
     private void btnBackMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseReleased
         // TODO add your handling code here:
+        DeliverDetail.getDcDeleverDateDI().setDate(dcDeliverDate.getDate());
+        DeliverDetail.getTxtRouteIdDI().setText(txtRouteId.getText());
+        DeliverDetail.getTxtRouteNameDI().setText(txtRouteName.getText());
+        DeliverDetail.getTxtVehicleIdDI().setText(txtVehicleId.getText());
+        DeliverDetail.getTxtVehicleiNumberDI().setText(txtVehicleNumber.getText());
         this.dispose();
     }//GEN-LAST:event_btnBackMouseReleased
 

@@ -37,6 +37,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
+import m.DeliverDetail;
 import m.ValueValidation;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -632,6 +633,12 @@ public class Delivery extends javax.swing.JPanel {
         jPanel15.add(jPanel16);
 
         jTabbedPane1.addTab("Delevery Vehicle", jPanel15);
+
+        jPanel48.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel48MouseMoved(evt);
+            }
+        });
 
         jPanel49.setBackground(new java.awt.Color(102, 255, 102));
         jPanel49.setLayout(new java.awt.GridLayout(1, 0));
@@ -2603,6 +2610,11 @@ public class Delivery extends javax.swing.JPanel {
         if (tblItem.getRowCount() == 0) {
             JOptionPane.showMessageDialog(this, "Please enter minimum one to the table.", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
+            DeliverDetail.setDcDeleverDateDI(dcDeleverDateDI);
+            DeliverDetail.setTxtRouteIdDI(txtRouteIdDI);
+            DeliverDetail.setTxtRouteNameDI(txtRouteNameDI);
+            DeliverDetail.setTxtVehicleIdDI(txtVehicleIdDI);
+            DeliverDetail.setTxtVehicleiNumberDI(txtVehicleiNumberDI);
             new v.frmDeleverySummery(tblItem, jTabbedPane1).setVisible(true);
         }
     }//GEN-LAST:event_btnDealMouseReleased
@@ -3485,6 +3497,10 @@ public class Delivery extends javax.swing.JPanel {
         // TODO add your handling code here:
         getReport();
     }//GEN-LAST:event_btnSummeryVR2ActionPerformed
+
+    private void jPanel48MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel48MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel48MouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
