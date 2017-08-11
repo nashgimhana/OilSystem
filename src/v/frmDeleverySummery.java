@@ -528,7 +528,16 @@ public class frmDeleverySummery extends javax.swing.JFrame {
         if (saveLoad == 1) {
             deleverySummery.saveMoneyBook(tblExpe);
             JOptionPane.showMessageDialog(rootPane, "Delivery Load successfuly", "Deliver Load", JOptionPane.INFORMATION_MESSAGE);
-            tpDelivery.setSelectedIndex(1);
+
+            int conform = JOptionPane.showConfirmDialog(rootPane, "Do you have any delivery invoice ?", "Deliver Invoice", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (conform == 0) {
+                tpDelivery.setSelectedIndex(1);
+                DeliverDetail.getDcDeleverDateDI().setDate(dcDeliverDate.getDate());
+                DeliverDetail.getTxtRouteIdDI().setText(txtRouteId.getText());
+                DeliverDetail.getTxtRouteNameDI().setText(txtRouteName.getText());
+                DeliverDetail.getTxtVehicleIdDI().setText(txtVehicleId.getText());
+                DeliverDetail.getTxtVehicleiNumberDI().setText(txtVehicleNumber.getText());
+            }
             this.dispose();
         }
     }//GEN-LAST:event_btnLoadMouseReleased
@@ -554,12 +563,7 @@ public class frmDeleverySummery extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAmountKeyReleased
 
     private void btnBackMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseReleased
-        // TODO add your handling code here:
-        DeliverDetail.getDcDeleverDateDI().setDate(dcDeliverDate.getDate());
-        DeliverDetail.getTxtRouteIdDI().setText(txtRouteId.getText());
-        DeliverDetail.getTxtRouteNameDI().setText(txtRouteName.getText());
-        DeliverDetail.getTxtVehicleIdDI().setText(txtVehicleId.getText());
-        DeliverDetail.getTxtVehicleiNumberDI().setText(txtVehicleNumber.getText());
+        // TODO add your handling code here:       
         this.dispose();
     }//GEN-LAST:event_btnBackMouseReleased
 
