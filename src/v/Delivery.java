@@ -132,7 +132,7 @@ public class Delivery extends javax.swing.JPanel {
         ac.acProductName(txtSPName);
         ac.acProductName(txtTPName);
         ac.autoCompleteBankName(txtCPB);
-        ac.autocompleteRouteRegNam(txtRouteName);
+        ac.autocompleteRouteRegNam(txtRouteNameVR);
         ac.autoCompleteVehicleNumber(txtVehicleNumber);
         ac.autocompleteRouteRegNam(txtRouteNameDI);
         ac.autoCompleteVehicleNumber(txtVehicleiNumberDI);
@@ -288,10 +288,10 @@ public class Delivery extends javax.swing.JPanel {
         jLabel43 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jPanel29 = new javax.swing.JPanel();
-        dcDeleverDate = new com.toedter.calendar.JDateChooser();
-        txtRouteId = new javax.swing.JTextField();
-        txtRouteName = new javax.swing.JTextField();
-        txtVehicleId = new javax.swing.JTextField();
+        dcDeleverDateVR = new com.toedter.calendar.JDateChooser();
+        txtRouteIdVR = new javax.swing.JTextField();
+        txtRouteNameVR = new javax.swing.JTextField();
+        txtVehicleIdVR = new javax.swing.JTextField();
         txtVehicleNumber = new javax.swing.JTextField();
         jPanel30 = new javax.swing.JPanel();
         btnAddItem = new javax.swing.JButton();
@@ -1484,34 +1484,34 @@ public class Delivery extends javax.swing.JPanel {
 
         jPanel29.setLayout(new java.awt.GridLayout(5, 0, 5, 5));
 
-        dcDeleverDate.setDateFormatString("yyyy-MM-dd");
-        jPanel29.add(dcDeleverDate);
+        dcDeleverDateVR.setDateFormatString("yyyy-MM-dd");
+        jPanel29.add(dcDeleverDateVR);
 
-        txtRouteId.setBackground(new java.awt.Color(240, 240, 240));
-        txtRouteId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtRouteId.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        jPanel29.add(txtRouteId);
+        txtRouteIdVR.setBackground(new java.awt.Color(240, 240, 240));
+        txtRouteIdVR.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtRouteIdVR.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        jPanel29.add(txtRouteIdVR);
 
-        txtRouteName.setBackground(new java.awt.Color(240, 240, 240));
-        txtRouteName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtRouteName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtRouteName.setNextFocusableComponent(txtVehicleNumber);
-        txtRouteName.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtRouteNameVR.setBackground(new java.awt.Color(240, 240, 240));
+        txtRouteNameVR.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtRouteNameVR.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtRouteNameVR.setNextFocusableComponent(txtVehicleNumber);
+        txtRouteNameVR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtRouteNameKeyTyped(evt);
+                txtRouteNameVRKeyTyped(evt);
             }
         });
-        jPanel29.add(txtRouteName);
+        jPanel29.add(txtRouteNameVR);
 
-        txtVehicleId.setBackground(new java.awt.Color(240, 240, 240));
-        txtVehicleId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtVehicleId.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtVehicleId.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtVehicleIdVR.setBackground(new java.awt.Color(240, 240, 240));
+        txtVehicleIdVR.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtVehicleIdVR.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtVehicleIdVR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtVehicleIdKeyTyped(evt);
+                txtVehicleIdVRKeyTyped(evt);
             }
         });
-        jPanel29.add(txtVehicleId);
+        jPanel29.add(txtVehicleIdVR);
 
         txtVehicleNumber.setBackground(new java.awt.Color(240, 240, 240));
         txtVehicleNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2699,7 +2699,7 @@ public class Delivery extends javax.swing.JPanel {
         if (tblItemVR.getRowCount() == 0) {
             JOptionPane.showMessageDialog(this, "Please enter minimum one to the table.", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
-            String deliverInfo = txtRouteId.getText() + "/" + txtVehicleId.getText();
+            String deliverInfo = txtRouteIdVR.getText() + "/" + txtVehicleIdVR.getText();
             boolean status = false;
             for (int i = 0; i < tblItemVR.getRowCount(); i++) {
                 if (tblItemVR.getValueAt(i, 4).toString().isEmpty()) {
@@ -2711,7 +2711,7 @@ public class Delivery extends javax.swing.JPanel {
                 }
             }
             if (status) {
-                new frmVehicleReturn(tblItemVR, txtRouteId, deliverInfo, dcDeleverDate.getDate(), jTabbedPane1).setVisible(true);
+                new frmVehicleReturn(tblItemVR, txtRouteIdVR, deliverInfo, dcDeleverDateVR.getDate(), jTabbedPane1).setVisible(true);
             }
         }
     }//GEN-LAST:event_btnSummeryVRActionPerformed
@@ -2721,14 +2721,14 @@ public class Delivery extends javax.swing.JPanel {
         //new VehicleReturn().addItem(txtProductName1, txtUnitVR, cmbStatus, txtRQ, tblItemVR);
         try {
             int routeByName = new VehicleReturn().getVehicleByNumber(txtVehicleNumber.getText());
-            txtVehicleId.setText(String.valueOf(routeByName));
+            txtVehicleIdVR.setText(String.valueOf(routeByName));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (!((JTextField) dcDeleverDate.getDateEditor().getUiComponent()).getText().isEmpty()) {
-            if (!txtRouteId.getText().isEmpty()) {
-                if (!txtVehicleId.getText().isEmpty()) {
-                    new c.VehicleReturn().addItem(txtVehicleId, txtRouteId, dcDeleverDate, tblItemVR);
+        if (!((JTextField) dcDeleverDateVR.getDateEditor().getUiComponent()).getText().isEmpty()) {
+            if (!txtRouteIdVR.getText().isEmpty()) {
+                if (!txtVehicleIdVR.getText().isEmpty()) {
+                    new c.VehicleReturn().addItem(txtVehicleIdVR, txtRouteIdVR, dcDeleverDateVR, tblItemVR);
                 }
             }
         }
@@ -2755,12 +2755,12 @@ public class Delivery extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tblItemVRKeyReleased
 
-    private void txtVehicleIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVehicleIdKeyTyped
+    private void txtVehicleIdVRKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVehicleIdVRKeyTyped
         // TODO add your handling code here:
         if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
-            new c.VehicleReturn().addItem(txtVehicleId, txtRouteId, dcDeleverDate, tblItemVR);
+            new c.VehicleReturn().addItem(txtVehicleIdVR, txtRouteIdVR, dcDeleverDateVR, tblItemVR);
         }
-    }//GEN-LAST:event_txtVehicleIdKeyTyped
+    }//GEN-LAST:event_txtVehicleIdVRKeyTyped
 
     private void jTabbedPane1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseMoved
         // TODO add your handling code here:
@@ -3147,15 +3147,15 @@ public class Delivery extends javax.swing.JPanel {
         if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
             try {
                 int routeByName = new VehicleReturn().getVehicleByNumber(txtVehicleNumber.getText());
-                txtVehicleId.setText(String.valueOf(routeByName));
+                txtVehicleIdVR.setText(String.valueOf(routeByName));
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            if (!((JTextField) dcDeleverDate.getDateEditor().getUiComponent()).getText().isEmpty()) {
-                if (!txtRouteId.getText().isEmpty()) {
-                    if (!txtVehicleId.getText().isEmpty()) {
+            if (!((JTextField) dcDeleverDateVR.getDateEditor().getUiComponent()).getText().isEmpty()) {
+                if (!txtRouteIdVR.getText().isEmpty()) {
+                    if (!txtVehicleIdVR.getText().isEmpty()) {
 
-                        new c.VehicleReturn().addItem(txtVehicleId, txtRouteId, dcDeleverDate, tblItemVR);
+                        new c.VehicleReturn().addItem(txtVehicleIdVR, txtRouteIdVR, dcDeleverDateVR, tblItemVR);
 
                     }
                 }
@@ -3163,17 +3163,17 @@ public class Delivery extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtVehicleNumberKeyTyped
 
-    private void txtRouteNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRouteNameKeyTyped
+    private void txtRouteNameVRKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRouteNameVRKeyTyped
         // TODO add your handling code here:
         if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
             try {
-                int routeByName = new VehicleReturn().getRouteByName(txtRouteName.getText());
-                txtRouteId.setText(String.valueOf(routeByName));
+                int routeByName = new VehicleReturn().getRouteByName(txtRouteNameVR.getText());
+                txtRouteIdVR.setText(String.valueOf(routeByName));
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-    }//GEN-LAST:event_txtRouteNameKeyTyped
+    }//GEN-LAST:event_txtRouteNameVRKeyTyped
 
     private void txtRouteNameDIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRouteNameDIKeyTyped
         // TODO add your handling code here:
@@ -3536,10 +3536,10 @@ public class Delivery extends javax.swing.JPanel {
     private javax.swing.JButton btn_saveRouteDebit;
     private javax.swing.JButton btn_vRegister;
     private javax.swing.JButton btn_vUpdate;
-    private com.toedter.calendar.JDateChooser dcDeleverDate;
     private com.toedter.calendar.JDateChooser dcDeleverDateDI;
     private com.toedter.calendar.JDateChooser dcDeleverDateR;
     private com.toedter.calendar.JDateChooser dcDeleverDateSP;
+    private com.toedter.calendar.JDateChooser dcDeleverDateVR;
     private com.toedter.calendar.JDateChooser dc_routeDebitDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -3690,14 +3690,14 @@ public class Delivery extends javax.swing.JPanel {
     private javax.swing.JTextField txtProductName;
     private javax.swing.JTextField txtQtyDI;
     private javax.swing.JLabel txtRemainQty;
-    private javax.swing.JTextField txtRouteId;
     private javax.swing.JTextField txtRouteIdDI;
     private javax.swing.JTextField txtRouteIdR;
     private javax.swing.JTextField txtRouteIdSP;
-    private javax.swing.JTextField txtRouteName;
+    private javax.swing.JTextField txtRouteIdVR;
     private javax.swing.JTextField txtRouteNameDI;
     private javax.swing.JTextField txtRouteNameR;
     private javax.swing.JTextField txtRouteNameSP;
+    private javax.swing.JTextField txtRouteNameVR;
     private javax.swing.JTextField txtSPName;
     private javax.swing.JTextField txtSPunit;
     private javax.swing.JTextField txtTC;
@@ -3708,10 +3708,10 @@ public class Delivery extends javax.swing.JPanel {
     private javax.swing.JTextField txtTVDI;
     private javax.swing.JTextField txtUnitName;
     private javax.swing.JTextField txtUnitPriceDI;
-    private javax.swing.JTextField txtVehicleId;
     private javax.swing.JTextField txtVehicleIdDI;
     private javax.swing.JTextField txtVehicleIdR;
     private javax.swing.JTextField txtVehicleIdSP;
+    private javax.swing.JTextField txtVehicleIdVR;
     private javax.swing.JTextField txtVehicleNameSP;
     private javax.swing.JTextField txtVehicleNumber;
     private javax.swing.JTextField txtVehicleNumberR;

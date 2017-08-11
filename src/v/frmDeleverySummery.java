@@ -554,6 +554,8 @@ public class frmDeleverySummery extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
 
+            }else if (conformProduct == 1) {
+                
             }
             this.dispose();
         }
