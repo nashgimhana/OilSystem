@@ -2615,6 +2615,14 @@ public class Delivery extends javax.swing.JPanel {
             DeliverDetail.setTxtRouteNameDI(txtRouteNameDI);
             DeliverDetail.setTxtVehicleIdDI(txtVehicleIdDI);
             DeliverDetail.setTxtVehicleiNumberDI(txtVehicleiNumberDI);
+
+            DeliverDetail.setDcDeleverDateSP(dcDeleverDateSP);
+            DeliverDetail.setTxtRouteIdSP(txtRouteIdSP);
+            DeliverDetail.setTxtRouteNameSP(txtRouteNameSP);
+            DeliverDetail.setTxtVehicleIdSP(txtVehicleIdSP);
+            DeliverDetail.setTxtVehicleNameSP(txtVehicleNameSP);
+            DeliverDetail.setTblItemSP(tblItemSP);
+            
             new v.frmDeleverySummery(tblItem, jTabbedPane1).setVisible(true);
         }
     }//GEN-LAST:event_btnDealMouseReleased

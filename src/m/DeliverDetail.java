@@ -6,6 +6,7 @@
 package m;
 
 import com.toedter.calendar.JDateChooser;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -13,6 +14,90 @@ import javax.swing.JTextField;
  * @author Buddhika Prasanna
  */
 public class DeliverDetail {
+
+    /**
+     * @return the tblItemSP
+     */
+    public static JTable getTblItemSP() {
+        return tblItemSP;
+    }
+
+    /**
+     * @param aTblItemSP the tblItemSP to set
+     */
+    public static void setTblItemSP(JTable aTblItemSP) {
+        tblItemSP = aTblItemSP;
+    }
+
+    /**
+     * @return the dcDeleverDateSP
+     */
+    public static JDateChooser getDcDeleverDateSP() {
+        return dcDeleverDateSP;
+    }
+
+    /**
+     * @param aDcDeleverDateSP the dcDeleverDateSP to set
+     */
+    public static void setDcDeleverDateSP(JDateChooser aDcDeleverDateSP) {
+        dcDeleverDateSP = aDcDeleverDateSP;
+    }
+
+    /**
+     * @return the txtRouteIdSP
+     */
+    public static JTextField getTxtRouteIdSP() {
+        return txtRouteIdSP;
+    }
+
+    /**
+     * @param aTxtRouteIdSP the txtRouteIdSP to set
+     */
+    public static void setTxtRouteIdSP(JTextField aTxtRouteIdSP) {
+        txtRouteIdSP = aTxtRouteIdSP;
+    }
+
+    /**
+     * @return the txtRouteNameSP
+     */
+    public static JTextField getTxtRouteNameSP() {
+        return txtRouteNameSP;
+    }
+
+    /**
+     * @param aTxtRouteNameSP the txtRouteNameSP to set
+     */
+    public static void setTxtRouteNameSP(JTextField aTxtRouteNameSP) {
+        txtRouteNameSP = aTxtRouteNameSP;
+    }
+
+    /**
+     * @return the txtVehicleIdSP
+     */
+    public static JTextField getTxtVehicleIdSP() {
+        return txtVehicleIdSP;
+    }
+
+    /**
+     * @param aTxtVehicleIdSP the txtVehicleIdSP to set
+     */
+    public static void setTxtVehicleIdSP(JTextField aTxtVehicleIdSP) {
+        txtVehicleIdSP = aTxtVehicleIdSP;
+    }
+
+    /**
+     * @return the txtVehicleNameSP
+     */
+    public static JTextField getTxtVehicleNameSP() {
+        return txtVehicleNameSP;
+    }
+
+    /**
+     * @param aTxtVehicleNameSP the txtVehicleNameSP to set
+     */
+    public static void setTxtVehicleNameSP(JTextField aTxtVehicleNameSP) {
+        txtVehicleNameSP = aTxtVehicleNameSP;
+    }
 
     /**
      * @return the dcDeleverDateDI
@@ -89,6 +174,13 @@ public class DeliverDetail {
     private static JTextField txtRouteIdDI;
     private static JTextField txtVehicleiNumberDI;
     private static JTextField txtVehicleIdDI;
+    
+    private static JDateChooser dcDeleverDateSP;
+    private static JTextField txtRouteIdSP;
+    private static JTextField txtRouteNameSP;
+    private static JTextField txtVehicleIdSP;
+    private static JTextField txtVehicleNameSP;
+    private static JTable tblItemSP;
 
     public DeliverDetail() {
 
