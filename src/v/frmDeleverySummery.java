@@ -501,7 +501,9 @@ public class frmDeleverySummery extends javax.swing.JFrame {
         autoComplete.acEmployeeName(txtEmployeeName);
         List<DealType> all = new m.DealType().getAll();
         for (DealType dealType : all) {
-            cmbET.addItem(dealType.getType());
+            if (dealType.getType().equals("Labour cost") | dealType.getType().equals("vehicle chargers") | dealType.getType().equals("keymoney") | dealType.getType().equals("Other") | dealType.getType().equals("other")) {
+                cmbET.addItem(dealType.getType());
+            }
         }
     }//GEN-LAST:event_formWindowOpened
 
