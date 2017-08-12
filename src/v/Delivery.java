@@ -46,6 +46,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
+import static v.frmDeleverySummery.tpDelivery;
 
 /**
  *
@@ -2610,6 +2611,7 @@ public class Delivery extends javax.swing.JPanel {
         if (tblItem.getRowCount() == 0) {
             JOptionPane.showMessageDialog(this, "Please enter minimum one to the table.", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
+
             DeliverDetail.setDcDeleverDateDI(dcDeleverDateDI);
             DeliverDetail.setTxtRouteIdDI(txtRouteIdDI);
             DeliverDetail.setTxtRouteNameDI(txtRouteNameDI);
@@ -2622,14 +2624,14 @@ public class Delivery extends javax.swing.JPanel {
             DeliverDetail.setTxtVehicleIdSP(txtVehicleIdSP);
             DeliverDetail.setTxtVehicleNameSP(txtVehicleNameSP);
             DeliverDetail.setTblItemSP(tblItemSP);
-            
+
             DeliverDetail.setDcDeleverDateVR(dcDeleverDateVR);
             DeliverDetail.setTxtRouteIdVR(txtRouteIdVR);
             DeliverDetail.setTxtRouteNameVR(txtRouteNameVR);
             DeliverDetail.setTxtVehicleIdVR(txtVehicleIdVR);
             DeliverDetail.setTxtVehicleNumberVR(txtVehicleNumberVR);
             DeliverDetail.setTblItemVR(tblItemVR);
-            
+
             new v.frmDeleverySummery(tblItem, jTabbedPane1).setVisible(true);
         }
     }//GEN-LAST:event_btnDealMouseReleased
@@ -3085,6 +3087,53 @@ public class Delivery extends javax.swing.JPanel {
         deleverySelfProduct.updateProduct(Double.parseDouble(txtTPP.getText()));
         deleverySelfProduct.saveMoneyBook(dcDeleverDateSP, "Self Production Cost", Double.parseDouble(txtTC.getText()), "Cash", "Production Cost", "Expend");
         AssetControl.getInstance().updateCashAsset(Double.parseDouble(txtTC.getText()) * Double.parseDouble(txtTQty.getText()), '-');
+
+        DeliverDetail.setDcDeleverDateDI(dcDeleverDateDI);
+        DeliverDetail.setTxtRouteIdDI(txtRouteIdDI);
+        DeliverDetail.setTxtRouteNameDI(txtRouteNameDI);
+        DeliverDetail.setTxtVehicleIdDI(txtVehicleIdDI);
+        DeliverDetail.setTxtVehicleiNumberDI(txtVehicleiNumberDI);
+
+        DeliverDetail.setDcDeleverDateSP(dcDeleverDateSP);
+        DeliverDetail.setTxtRouteIdSP(txtRouteIdSP);
+        DeliverDetail.setTxtRouteNameSP(txtRouteNameSP);
+        DeliverDetail.setTxtVehicleIdSP(txtVehicleIdSP);
+        DeliverDetail.setTxtVehicleNameSP(txtVehicleNameSP);
+        DeliverDetail.setTblItemSP(tblItemSP);
+
+        DeliverDetail.setDcDeleverDateVR(dcDeleverDateVR);
+        DeliverDetail.setTxtRouteIdVR(txtRouteIdVR);
+        DeliverDetail.setTxtRouteNameVR(txtRouteNameVR);
+        DeliverDetail.setTxtVehicleIdVR(txtVehicleIdVR);
+        DeliverDetail.setTxtVehicleNumberVR(txtVehicleNumberVR);
+        DeliverDetail.setTblItemVR(tblItemVR);
+
+        int conformInvoice = JOptionPane.showConfirmDialog(null, "Do you have any delivery invoice ?", "Deliver Invoice", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (conformInvoice == 0) {
+            tpDelivery.setSelectedIndex(2);
+            DeliverDetail.getDcDeleverDateDI().setDate(dcDeleverDateSP.getDate());
+            DeliverDetail.getTxtRouteIdDI().setText(txtRouteIdSP.getText());
+            DeliverDetail.getTxtRouteNameDI().setText(txtRouteNameSP.getText());
+            DeliverDetail.getTxtVehicleIdDI().setText(txtVehicleIdSP.getText());
+            DeliverDetail.getTxtVehicleiNumberDI().setText(txtVehicleNameSP.getText());
+        } else if (conformInvoice == 1) {
+            int conformReturn = JOptionPane.showConfirmDialog(null, "Do you return your delivery ?", "Deliver Return", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (conformReturn == 0) {
+                tpDelivery.setSelectedIndex(2);
+                DeliverDetail.getDcDeleverDateVR().setDate(dcDeleverDateSP.getDate());
+                DeliverDetail.getTxtRouteIdVR().setText(txtRouteIdSP.getText());
+                DeliverDetail.getTxtRouteNameVR().setText(txtRouteNameSP.getText());
+                DeliverDetail.getTxtVehicleIdVR().setText(txtVehicleIdSP.getText());
+                DeliverDetail.getTxtVehicleNumberVR().setText(txtVehicleNameSP.getText());
+                try {
+                    new c.VehicleReturn().addItem(DeliverDetail.getTxtVehicleIdVR(), DeliverDetail.getTxtRouteIdVR(), DeliverDetail.getDcDeleverDateVR(), DeliverDetail.getTblItemVR());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+
         resetAll();
     }//GEN-LAST:event_btnSaveMouseReleased
 

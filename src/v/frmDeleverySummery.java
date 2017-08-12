@@ -553,7 +553,7 @@ public class frmDeleverySummery extends javax.swing.JFrame {
                     DeliverDetail.getTxtRouteNameDI().setText(txtRouteName.getText());
                     DeliverDetail.getTxtVehicleIdDI().setText(txtVehicleId.getText());
                     DeliverDetail.getTxtVehicleiNumberDI().setText(txtVehicleNumber.getText());
-                } else if (conformProduct == 1) {
+                } else if (conformInvoice == 1) {
                     int conformReturn = JOptionPane.showConfirmDialog(rootPane, "Do you return your delivery ?", "Deliver Return", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (conformReturn == 0) {
                         tpDelivery.setSelectedIndex(2);
