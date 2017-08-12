@@ -3130,7 +3130,6 @@ public class Delivery extends javax.swing.JPanel {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
         }
 

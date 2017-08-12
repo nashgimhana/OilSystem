@@ -706,7 +706,7 @@ public class frmDeliveryInvoice extends javax.swing.JFrame {
                 }
                 assetControl.updateCashAsset(Math.round(amount * 100.0) / 100.0, '+');
                 JOptionPane.showMessageDialog(rootPane, "Receipt save successful", "Receipt Save", JOptionPane.INFORMATION_MESSAGE);
-                tpDelivery.setSelectedIndex(2);
+                tpDelivery.setSelectedIndex(3);
                 this.dispose();
             }
         }
