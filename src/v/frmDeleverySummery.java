@@ -529,19 +529,9 @@ public class frmDeleverySummery extends javax.swing.JFrame {
             deleverySummery.saveMoneyBook(tblExpe);
             JOptionPane.showMessageDialog(rootPane, "Delivery Load successfuly", "Deliver Load", JOptionPane.INFORMATION_MESSAGE);
 
-            int conformInvoice = JOptionPane.showConfirmDialog(rootPane, "Do you have any delivery invoice ?", "Deliver Invoice", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (conformInvoice == 0) {
-                tpDelivery.setSelectedIndex(1);
-                DeliverDetail.getDcDeleverDateDI().setDate(dcDeliverDate.getDate());
-                DeliverDetail.getTxtRouteIdDI().setText(txtRouteId.getText());
-                DeliverDetail.getTxtRouteNameDI().setText(txtRouteName.getText());
-                DeliverDetail.getTxtVehicleIdDI().setText(txtVehicleId.getText());
-                DeliverDetail.getTxtVehicleiNumberDI().setText(txtVehicleNumber.getText());
-            }
-
             int conformProduct = JOptionPane.showConfirmDialog(rootPane, "Do you want make any self product ?", "Self Product", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (conformProduct == 0) {
-                tpDelivery.setSelectedIndex(2);
+                tpDelivery.setSelectedIndex(1);
                 DeliverDetail.getDcDeleverDateSP().setDate(dcDeliverDate.getDate());
                 DeliverDetail.getTxtRouteIdSP().setText(txtRouteId.getText());
                 DeliverDetail.getTxtRouteNameSP().setText(txtRouteName.getText());
@@ -554,8 +544,33 @@ public class frmDeleverySummery extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
 
-            }else if (conformProduct == 1) {
-                
+            } else if (conformProduct == 1) {
+                int conformInvoice = JOptionPane.showConfirmDialog(rootPane, "Do you have any delivery invoice ?", "Deliver Invoice", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (conformInvoice == 0) {
+                    tpDelivery.setSelectedIndex(2);
+                    DeliverDetail.getDcDeleverDateDI().setDate(dcDeliverDate.getDate());
+                    DeliverDetail.getTxtRouteIdDI().setText(txtRouteId.getText());
+                    DeliverDetail.getTxtRouteNameDI().setText(txtRouteName.getText());
+                    DeliverDetail.getTxtVehicleIdDI().setText(txtVehicleId.getText());
+                    DeliverDetail.getTxtVehicleiNumberDI().setText(txtVehicleNumber.getText());
+                } else if (conformProduct == 1) {
+                    int conformReturn = JOptionPane.showConfirmDialog(rootPane, "Do you return your delivery ?", "Deliver Return", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    if (conformReturn == 0) {
+                        tpDelivery.setSelectedIndex(2);
+                        DeliverDetail.getDcDeleverDateVR().setDate(dcDeliverDate.getDate());
+                        DeliverDetail.getTxtRouteIdVR().setText(txtRouteId.getText());
+                        DeliverDetail.getTxtRouteNameVR().setText(txtRouteName.getText());
+                        DeliverDetail.getTxtVehicleIdVR().setText(txtVehicleId.getText());
+                        DeliverDetail.getTxtVehicleNumberVR().setText(txtVehicleNumber.getText());
+
+                        try {
+                            new c.VehicleReturn().addItem(DeliverDetail.getTxtVehicleIdVR(), DeliverDetail.getTxtRouteIdVR(), DeliverDetail.getDcDeleverDateVR(), DeliverDetail.getTblItemVR());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
             }
             this.dispose();
         }

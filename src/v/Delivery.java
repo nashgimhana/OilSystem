@@ -133,7 +133,7 @@ public class Delivery extends javax.swing.JPanel {
         ac.acProductName(txtTPName);
         ac.autoCompleteBankName(txtCPB);
         ac.autocompleteRouteRegNam(txtRouteNameVR);
-        ac.autoCompleteVehicleNumber(txtVehicleNumber);
+        ac.autoCompleteVehicleNumber(txtVehicleNumberVR);
         ac.autocompleteRouteRegNam(txtRouteNameDI);
         ac.autoCompleteVehicleNumber(txtVehicleiNumberDI);
         ac.autocompleteRouteRegNam(txtRouteNameSP);
@@ -191,41 +191,6 @@ public class Delivery extends javax.swing.JPanel {
         btnRA = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         lblLastDeliverDate = new javax.swing.JLabel();
-        jPanel48 = new javax.swing.JPanel();
-        jPanel49 = new javax.swing.JPanel();
-        jLabel46 = new javax.swing.JLabel();
-        jPanel51 = new javax.swing.JPanel();
-        jPanel52 = new javax.swing.JPanel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        jLabel57 = new javax.swing.JLabel();
-        jPanel53 = new javax.swing.JPanel();
-        dcDeleverDateDI = new com.toedter.calendar.JDateChooser();
-        txtRouteIdDI = new javax.swing.JTextField();
-        txtRouteNameDI = new javax.swing.JTextField();
-        txtVehicleIdDI = new javax.swing.JTextField();
-        txtVehicleiNumberDI = new javax.swing.JTextField();
-        txtPnameDI = new javax.swing.JTextField();
-        txtPUnitDI = new javax.swing.JTextField();
-        txtUnitPriceDI = new javax.swing.JTextField();
-        txtQtyDI = new javax.swing.JTextField();
-        txtTVDI = new javax.swing.JTextField();
-        jPanel50 = new javax.swing.JPanel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        tblItemDI = new javax.swing.JTable();
-        jPanel55 = new javax.swing.JPanel();
-        btnRIVR1 = new javax.swing.JButton();
-        btnRAVR1 = new javax.swing.JButton();
-        jPanel54 = new javax.swing.JPanel();
-        btnAddItem1 = new javax.swing.JButton();
-        btnSummeryVR1 = new javax.swing.JButton();
         jPanel35 = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
@@ -276,6 +241,41 @@ public class Delivery extends javax.swing.JPanel {
         jPanel47 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         tblItemSP = new javax.swing.JTable();
+        jPanel48 = new javax.swing.JPanel();
+        jPanel49 = new javax.swing.JPanel();
+        jLabel46 = new javax.swing.JLabel();
+        jPanel51 = new javax.swing.JPanel();
+        jPanel52 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jPanel53 = new javax.swing.JPanel();
+        dcDeleverDateDI = new com.toedter.calendar.JDateChooser();
+        txtRouteIdDI = new javax.swing.JTextField();
+        txtRouteNameDI = new javax.swing.JTextField();
+        txtVehicleIdDI = new javax.swing.JTextField();
+        txtVehicleiNumberDI = new javax.swing.JTextField();
+        txtPnameDI = new javax.swing.JTextField();
+        txtPUnitDI = new javax.swing.JTextField();
+        txtUnitPriceDI = new javax.swing.JTextField();
+        txtQtyDI = new javax.swing.JTextField();
+        txtTVDI = new javax.swing.JTextField();
+        jPanel50 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tblItemDI = new javax.swing.JTable();
+        jPanel55 = new javax.swing.JPanel();
+        btnRIVR1 = new javax.swing.JButton();
+        btnRAVR1 = new javax.swing.JButton();
+        jPanel54 = new javax.swing.JPanel();
+        btnAddItem1 = new javax.swing.JButton();
+        btnSummeryVR1 = new javax.swing.JButton();
         jPanel24 = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
@@ -292,7 +292,7 @@ public class Delivery extends javax.swing.JPanel {
         txtRouteIdVR = new javax.swing.JTextField();
         txtRouteNameVR = new javax.swing.JTextField();
         txtVehicleIdVR = new javax.swing.JTextField();
-        txtVehicleNumber = new javax.swing.JTextField();
+        txtVehicleNumberVR = new javax.swing.JTextField();
         jPanel30 = new javax.swing.JPanel();
         btnAddItem = new javax.swing.JButton();
         btnSummeryVR = new javax.swing.JButton();
@@ -633,362 +633,6 @@ public class Delivery extends javax.swing.JPanel {
         jPanel15.add(jPanel16);
 
         jTabbedPane1.addTab("Delevery Vehicle", jPanel15);
-
-        jPanel48.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jPanel48MouseMoved(evt);
-            }
-        });
-
-        jPanel49.setBackground(new java.awt.Color(102, 255, 102));
-        jPanel49.setLayout(new java.awt.GridLayout(1, 0));
-
-        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel46.setText("Item Back ");
-        jPanel49.add(jLabel46);
-
-        jPanel52.setLayout(new java.awt.GridLayout(10, 0, 5, 5));
-
-        jLabel47.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel47.setText("Delevery Date");
-        jPanel52.add(jLabel47);
-
-        jLabel48.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel48.setText("Route Id ");
-        jPanel52.add(jLabel48);
-
-        jLabel49.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel49.setText("Route Name");
-        jPanel52.add(jLabel49);
-
-        jLabel50.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel50.setText("Vehicle Id");
-        jPanel52.add(jLabel50);
-
-        jLabel51.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel51.setText("Vehicle Number");
-        jPanel52.add(jLabel51);
-
-        jLabel52.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel52.setText("Product Name");
-        jPanel52.add(jLabel52);
-
-        jLabel53.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel53.setText("Unit");
-        jPanel52.add(jLabel53);
-
-        jLabel54.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel54.setText("Unit Price");
-        jPanel52.add(jLabel54);
-
-        jLabel58.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel58.setText("Qty");
-        jPanel52.add(jLabel58);
-
-        jLabel57.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel57.setText("Total Value");
-        jPanel52.add(jLabel57);
-
-        jPanel53.setLayout(new java.awt.GridLayout(10, 0, 5, 5));
-
-        dcDeleverDateDI.setDateFormatString("yyyy-MM-dd");
-        dcDeleverDateDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        dcDeleverDateDI.setNextFocusableComponent(txtRouteNameDI);
-        jPanel53.add(dcDeleverDateDI);
-
-        txtRouteIdDI.setBackground(new java.awt.Color(240, 240, 240));
-        txtRouteIdDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtRouteIdDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        jPanel53.add(txtRouteIdDI);
-
-        txtRouteNameDI.setBackground(new java.awt.Color(240, 240, 240));
-        txtRouteNameDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtRouteNameDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtRouteNameDI.setNextFocusableComponent(txtVehicleiNumberDI);
-        txtRouteNameDI.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtRouteNameDIKeyTyped(evt);
-            }
-        });
-        jPanel53.add(txtRouteNameDI);
-
-        txtVehicleIdDI.setBackground(new java.awt.Color(240, 240, 240));
-        txtVehicleIdDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtVehicleIdDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtVehicleIdDI.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtVehicleIdDIKeyTyped(evt);
-            }
-        });
-        jPanel53.add(txtVehicleIdDI);
-
-        txtVehicleiNumberDI.setBackground(new java.awt.Color(240, 240, 240));
-        txtVehicleiNumberDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtVehicleiNumberDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtVehicleiNumberDI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtVehicleiNumberDIActionPerformed(evt);
-            }
-        });
-        txtVehicleiNumberDI.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtVehicleiNumberDIKeyTyped(evt);
-            }
-        });
-        jPanel53.add(txtVehicleiNumberDI);
-
-        txtPnameDI.setBackground(new java.awt.Color(240, 240, 240));
-        txtPnameDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtPnameDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtPnameDI.setNextFocusableComponent(txtUnitPriceDI);
-        txtPnameDI.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtPnameDIKeyTyped(evt);
-            }
-        });
-        jPanel53.add(txtPnameDI);
-
-        txtPUnitDI.setBackground(new java.awt.Color(240, 240, 240));
-        txtPUnitDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtPUnitDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtPUnitDI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPUnitDIActionPerformed(evt);
-            }
-        });
-        txtPUnitDI.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtPUnitDIKeyTyped(evt);
-            }
-        });
-        jPanel53.add(txtPUnitDI);
-
-        txtUnitPriceDI.setBackground(new java.awt.Color(240, 240, 240));
-        txtUnitPriceDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtUnitPriceDI.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtUnitPriceDI.setText("0");
-        txtUnitPriceDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtUnitPriceDI.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtUnitPriceDIFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtUnitPriceDIFocusLost(evt);
-            }
-        });
-        txtUnitPriceDI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUnitPriceDIActionPerformed(evt);
-            }
-        });
-        txtUnitPriceDI.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtUnitPriceDIKeyTyped(evt);
-            }
-        });
-        jPanel53.add(txtUnitPriceDI);
-
-        txtQtyDI.setBackground(new java.awt.Color(240, 240, 240));
-        txtQtyDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtQtyDI.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtQtyDI.setText("0");
-        txtQtyDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtQtyDI.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtQtyDIFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtQtyDIFocusLost(evt);
-            }
-        });
-        txtQtyDI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtQtyDIActionPerformed(evt);
-            }
-        });
-        txtQtyDI.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtQtyDIKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtQtyDIKeyTyped(evt);
-            }
-        });
-        jPanel53.add(txtQtyDI);
-
-        txtTVDI.setBackground(new java.awt.Color(240, 240, 240));
-        txtTVDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtTVDI.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtTVDI.setText("0");
-        txtTVDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtTVDI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTVDIActionPerformed(evt);
-            }
-        });
-        txtTVDI.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtTVDIKeyTyped(evt);
-            }
-        });
-        jPanel53.add(txtTVDI);
-
-        javax.swing.GroupLayout jPanel51Layout = new javax.swing.GroupLayout(jPanel51);
-        jPanel51.setLayout(jPanel51Layout);
-        jPanel51Layout.setHorizontalGroup(
-            jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel51Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel52, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel53, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel51Layout.setVerticalGroup(
-            jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel51Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel53, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
-                    .addComponent(jPanel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jScrollPane9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        tblItemDI.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Product Name", "Unit", "Unit Price", "Quantity", "Total Value", "#Log Id", "#Load Id"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, true, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblItemDI.getTableHeader().setReorderingAllowed(false);
-        tblItemDI.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                tblItemDIKeyReleased(evt);
-            }
-        });
-        jScrollPane9.setViewportView(tblItemDI);
-        if (tblItemDI.getColumnModel().getColumnCount() > 0) {
-            tblItemDI.getColumnModel().getColumn(0).setResizable(false);
-            tblItemDI.getColumnModel().getColumn(0).setPreferredWidth(100);
-            tblItemDI.getColumnModel().getColumn(1).setResizable(false);
-            tblItemDI.getColumnModel().getColumn(1).setPreferredWidth(5);
-            tblItemDI.getColumnModel().getColumn(2).setResizable(false);
-            tblItemDI.getColumnModel().getColumn(2).setPreferredWidth(10);
-            tblItemDI.getColumnModel().getColumn(3).setResizable(false);
-            tblItemDI.getColumnModel().getColumn(3).setPreferredWidth(30);
-            tblItemDI.getColumnModel().getColumn(4).setResizable(false);
-            tblItemDI.getColumnModel().getColumn(4).setPreferredWidth(20);
-            tblItemDI.getColumnModel().getColumn(5).setResizable(false);
-            tblItemDI.getColumnModel().getColumn(5).setPreferredWidth(5);
-            tblItemDI.getColumnModel().getColumn(6).setResizable(false);
-            tblItemDI.getColumnModel().getColumn(6).setPreferredWidth(5);
-        }
-
-        jPanel55.setLayout(new java.awt.GridLayout(1, 0, 5, 5));
-
-        btnRIVR1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnRIVR1.setText("Remove Item");
-        btnRIVR1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                btnRIVR1MouseReleased(evt);
-            }
-        });
-        jPanel55.add(btnRIVR1);
-
-        btnRAVR1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnRAVR1.setText("Remove All");
-        btnRAVR1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                btnRAVR1MouseReleased(evt);
-            }
-        });
-        jPanel55.add(btnRAVR1);
-
-        javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
-        jPanel50.setLayout(jPanel50Layout);
-        jPanel50Layout.setHorizontalGroup(
-            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
-            .addGroup(jPanel50Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel55, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel50Layout.setVerticalGroup(
-            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel50Layout.createSequentialGroup()
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel55, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jPanel54.setLayout(new java.awt.GridLayout(1, 0, 5, 5));
-
-        btnAddItem1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnAddItem1.setText("Add Item");
-        btnAddItem1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                btnAddItem1MouseReleased(evt);
-            }
-        });
-        jPanel54.add(btnAddItem1);
-
-        btnSummeryVR1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnSummeryVR1.setText("Summery");
-        btnSummeryVR1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSummeryVR1ActionPerformed(evt);
-            }
-        });
-        jPanel54.add(btnSummeryVR1);
-
-        javax.swing.GroupLayout jPanel48Layout = new javax.swing.GroupLayout(jPanel48);
-        jPanel48.setLayout(jPanel48Layout);
-        jPanel48Layout.setHorizontalGroup(
-            jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel49, javax.swing.GroupLayout.DEFAULT_SIZE, 1187, Short.MAX_VALUE)
-            .addGroup(jPanel48Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel48Layout.createSequentialGroup()
-                        .addComponent(jPanel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel48Layout.createSequentialGroup()
-                        .addComponent(jPanel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(jPanel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel48Layout.setVerticalGroup(
-            jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel48Layout.createSequentialGroup()
-                .addComponent(jPanel49, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel48Layout.createSequentialGroup()
-                        .addComponent(jPanel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Delivery Invoice", jPanel48);
 
         jPanel37.setBackground(new java.awt.Color(102, 255, 102));
         jPanel37.setLayout(new java.awt.GridLayout(1, 0));
@@ -1449,6 +1093,362 @@ public class Delivery extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Self Products", jPanel35);
 
+        jPanel48.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel48MouseMoved(evt);
+            }
+        });
+
+        jPanel49.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel49.setLayout(new java.awt.GridLayout(1, 0));
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel46.setText("Item Back ");
+        jPanel49.add(jLabel46);
+
+        jPanel52.setLayout(new java.awt.GridLayout(10, 0, 5, 5));
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel47.setText("Delevery Date");
+        jPanel52.add(jLabel47);
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel48.setText("Route Id ");
+        jPanel52.add(jLabel48);
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel49.setText("Route Name");
+        jPanel52.add(jLabel49);
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel50.setText("Vehicle Id");
+        jPanel52.add(jLabel50);
+
+        jLabel51.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel51.setText("Vehicle Number");
+        jPanel52.add(jLabel51);
+
+        jLabel52.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel52.setText("Product Name");
+        jPanel52.add(jLabel52);
+
+        jLabel53.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel53.setText("Unit");
+        jPanel52.add(jLabel53);
+
+        jLabel54.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel54.setText("Unit Price");
+        jPanel52.add(jLabel54);
+
+        jLabel58.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel58.setText("Qty");
+        jPanel52.add(jLabel58);
+
+        jLabel57.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel57.setText("Total Value");
+        jPanel52.add(jLabel57);
+
+        jPanel53.setLayout(new java.awt.GridLayout(10, 0, 5, 5));
+
+        dcDeleverDateDI.setDateFormatString("yyyy-MM-dd");
+        dcDeleverDateDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        dcDeleverDateDI.setNextFocusableComponent(txtRouteNameDI);
+        jPanel53.add(dcDeleverDateDI);
+
+        txtRouteIdDI.setBackground(new java.awt.Color(240, 240, 240));
+        txtRouteIdDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtRouteIdDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        jPanel53.add(txtRouteIdDI);
+
+        txtRouteNameDI.setBackground(new java.awt.Color(240, 240, 240));
+        txtRouteNameDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtRouteNameDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtRouteNameDI.setNextFocusableComponent(txtVehicleiNumberDI);
+        txtRouteNameDI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRouteNameDIKeyTyped(evt);
+            }
+        });
+        jPanel53.add(txtRouteNameDI);
+
+        txtVehicleIdDI.setBackground(new java.awt.Color(240, 240, 240));
+        txtVehicleIdDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtVehicleIdDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtVehicleIdDI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtVehicleIdDIKeyTyped(evt);
+            }
+        });
+        jPanel53.add(txtVehicleIdDI);
+
+        txtVehicleiNumberDI.setBackground(new java.awt.Color(240, 240, 240));
+        txtVehicleiNumberDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtVehicleiNumberDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtVehicleiNumberDI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVehicleiNumberDIActionPerformed(evt);
+            }
+        });
+        txtVehicleiNumberDI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtVehicleiNumberDIKeyTyped(evt);
+            }
+        });
+        jPanel53.add(txtVehicleiNumberDI);
+
+        txtPnameDI.setBackground(new java.awt.Color(240, 240, 240));
+        txtPnameDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPnameDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtPnameDI.setNextFocusableComponent(txtUnitPriceDI);
+        txtPnameDI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPnameDIKeyTyped(evt);
+            }
+        });
+        jPanel53.add(txtPnameDI);
+
+        txtPUnitDI.setBackground(new java.awt.Color(240, 240, 240));
+        txtPUnitDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPUnitDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtPUnitDI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPUnitDIActionPerformed(evt);
+            }
+        });
+        txtPUnitDI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPUnitDIKeyTyped(evt);
+            }
+        });
+        jPanel53.add(txtPUnitDI);
+
+        txtUnitPriceDI.setBackground(new java.awt.Color(240, 240, 240));
+        txtUnitPriceDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtUnitPriceDI.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtUnitPriceDI.setText("0");
+        txtUnitPriceDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtUnitPriceDI.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtUnitPriceDIFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtUnitPriceDIFocusLost(evt);
+            }
+        });
+        txtUnitPriceDI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUnitPriceDIActionPerformed(evt);
+            }
+        });
+        txtUnitPriceDI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUnitPriceDIKeyTyped(evt);
+            }
+        });
+        jPanel53.add(txtUnitPriceDI);
+
+        txtQtyDI.setBackground(new java.awt.Color(240, 240, 240));
+        txtQtyDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtQtyDI.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtQtyDI.setText("0");
+        txtQtyDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtQtyDI.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtQtyDIFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtQtyDIFocusLost(evt);
+            }
+        });
+        txtQtyDI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtQtyDIActionPerformed(evt);
+            }
+        });
+        txtQtyDI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtQtyDIKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQtyDIKeyTyped(evt);
+            }
+        });
+        jPanel53.add(txtQtyDI);
+
+        txtTVDI.setBackground(new java.awt.Color(240, 240, 240));
+        txtTVDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtTVDI.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtTVDI.setText("0");
+        txtTVDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtTVDI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTVDIActionPerformed(evt);
+            }
+        });
+        txtTVDI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTVDIKeyTyped(evt);
+            }
+        });
+        jPanel53.add(txtTVDI);
+
+        javax.swing.GroupLayout jPanel51Layout = new javax.swing.GroupLayout(jPanel51);
+        jPanel51.setLayout(jPanel51Layout);
+        jPanel51Layout.setHorizontalGroup(
+            jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel51Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel52, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel53, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel51Layout.setVerticalGroup(
+            jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel51Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel53, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+                    .addComponent(jPanel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jScrollPane9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        tblItemDI.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Product Name", "Unit", "Unit Price", "Quantity", "Total Value", "#Log Id", "#Load Id"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblItemDI.getTableHeader().setReorderingAllowed(false);
+        tblItemDI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tblItemDIKeyReleased(evt);
+            }
+        });
+        jScrollPane9.setViewportView(tblItemDI);
+        if (tblItemDI.getColumnModel().getColumnCount() > 0) {
+            tblItemDI.getColumnModel().getColumn(0).setResizable(false);
+            tblItemDI.getColumnModel().getColumn(0).setPreferredWidth(100);
+            tblItemDI.getColumnModel().getColumn(1).setResizable(false);
+            tblItemDI.getColumnModel().getColumn(1).setPreferredWidth(5);
+            tblItemDI.getColumnModel().getColumn(2).setResizable(false);
+            tblItemDI.getColumnModel().getColumn(2).setPreferredWidth(10);
+            tblItemDI.getColumnModel().getColumn(3).setResizable(false);
+            tblItemDI.getColumnModel().getColumn(3).setPreferredWidth(30);
+            tblItemDI.getColumnModel().getColumn(4).setResizable(false);
+            tblItemDI.getColumnModel().getColumn(4).setPreferredWidth(20);
+            tblItemDI.getColumnModel().getColumn(5).setResizable(false);
+            tblItemDI.getColumnModel().getColumn(5).setPreferredWidth(5);
+            tblItemDI.getColumnModel().getColumn(6).setResizable(false);
+            tblItemDI.getColumnModel().getColumn(6).setPreferredWidth(5);
+        }
+
+        jPanel55.setLayout(new java.awt.GridLayout(1, 0, 5, 5));
+
+        btnRIVR1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnRIVR1.setText("Remove Item");
+        btnRIVR1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnRIVR1MouseReleased(evt);
+            }
+        });
+        jPanel55.add(btnRIVR1);
+
+        btnRAVR1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnRAVR1.setText("Remove All");
+        btnRAVR1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnRAVR1MouseReleased(evt);
+            }
+        });
+        jPanel55.add(btnRAVR1);
+
+        javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
+        jPanel50.setLayout(jPanel50Layout);
+        jPanel50Layout.setHorizontalGroup(
+            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
+            .addGroup(jPanel50Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel55, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel50Layout.setVerticalGroup(
+            jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel50Layout.createSequentialGroup()
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel55, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel54.setLayout(new java.awt.GridLayout(1, 0, 5, 5));
+
+        btnAddItem1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnAddItem1.setText("Add Item");
+        btnAddItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnAddItem1MouseReleased(evt);
+            }
+        });
+        jPanel54.add(btnAddItem1);
+
+        btnSummeryVR1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnSummeryVR1.setText("Summery");
+        btnSummeryVR1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSummeryVR1ActionPerformed(evt);
+            }
+        });
+        jPanel54.add(btnSummeryVR1);
+
+        javax.swing.GroupLayout jPanel48Layout = new javax.swing.GroupLayout(jPanel48);
+        jPanel48.setLayout(jPanel48Layout);
+        jPanel48Layout.setHorizontalGroup(
+            jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel49, javax.swing.GroupLayout.DEFAULT_SIZE, 1187, Short.MAX_VALUE)
+            .addGroup(jPanel48Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel48Layout.createSequentialGroup()
+                        .addComponent(jPanel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel48Layout.createSequentialGroup()
+                        .addComponent(jPanel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addComponent(jPanel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel48Layout.setVerticalGroup(
+            jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel48Layout.createSequentialGroup()
+                .addComponent(jPanel49, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel48Layout.createSequentialGroup()
+                        .addComponent(jPanel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Delivery Invoice", jPanel48);
+
         jPanel24.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel26.setBackground(new java.awt.Color(102, 255, 102));
@@ -1495,7 +1495,7 @@ public class Delivery extends javax.swing.JPanel {
         txtRouteNameVR.setBackground(new java.awt.Color(240, 240, 240));
         txtRouteNameVR.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtRouteNameVR.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtRouteNameVR.setNextFocusableComponent(txtVehicleNumber);
+        txtRouteNameVR.setNextFocusableComponent(txtVehicleNumberVR);
         txtRouteNameVR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtRouteNameVRKeyTyped(evt);
@@ -1513,20 +1513,20 @@ public class Delivery extends javax.swing.JPanel {
         });
         jPanel29.add(txtVehicleIdVR);
 
-        txtVehicleNumber.setBackground(new java.awt.Color(240, 240, 240));
-        txtVehicleNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtVehicleNumber.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtVehicleNumber.addActionListener(new java.awt.event.ActionListener() {
+        txtVehicleNumberVR.setBackground(new java.awt.Color(240, 240, 240));
+        txtVehicleNumberVR.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtVehicleNumberVR.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtVehicleNumberVR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtVehicleNumberActionPerformed(evt);
+                txtVehicleNumberVRActionPerformed(evt);
             }
         });
-        txtVehicleNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtVehicleNumberVR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtVehicleNumberKeyTyped(evt);
+                txtVehicleNumberVRKeyTyped(evt);
             }
         });
-        jPanel29.add(txtVehicleNumber);
+        jPanel29.add(txtVehicleNumberVR);
 
         jPanel30.setLayout(new java.awt.GridLayout(1, 0, 5, 5));
 
@@ -2623,6 +2623,13 @@ public class Delivery extends javax.swing.JPanel {
             DeliverDetail.setTxtVehicleNameSP(txtVehicleNameSP);
             DeliverDetail.setTblItemSP(tblItemSP);
             
+            DeliverDetail.setDcDeleverDateVR(dcDeleverDateVR);
+            DeliverDetail.setTxtRouteIdVR(txtRouteIdVR);
+            DeliverDetail.setTxtRouteNameVR(txtRouteNameVR);
+            DeliverDetail.setTxtVehicleIdVR(txtVehicleIdVR);
+            DeliverDetail.setTxtVehicleNumberVR(txtVehicleNumberVR);
+            DeliverDetail.setTblItemVR(tblItemVR);
+            
             new v.frmDeleverySummery(tblItem, jTabbedPane1).setVisible(true);
         }
     }//GEN-LAST:event_btnDealMouseReleased
@@ -2720,7 +2727,7 @@ public class Delivery extends javax.swing.JPanel {
         // TODO add your handling code here:
         //new VehicleReturn().addItem(txtProductName1, txtUnitVR, cmbStatus, txtRQ, tblItemVR);
         try {
-            int routeByName = new VehicleReturn().getVehicleByNumber(txtVehicleNumber.getText());
+            int routeByName = new VehicleReturn().getVehicleByNumber(txtVehicleNumberVR.getText());
             txtVehicleIdVR.setText(String.valueOf(routeByName));
         } catch (Exception e) {
             e.printStackTrace();
@@ -3138,15 +3145,15 @@ public class Delivery extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtTPPKeyTyped
 
-    private void txtVehicleNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVehicleNumberActionPerformed
+    private void txtVehicleNumberVRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVehicleNumberVRActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtVehicleNumberActionPerformed
+    }//GEN-LAST:event_txtVehicleNumberVRActionPerformed
 
-    private void txtVehicleNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVehicleNumberKeyTyped
+    private void txtVehicleNumberVRKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVehicleNumberVRKeyTyped
         // TODO add your handling code here:
         if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
             try {
-                int routeByName = new VehicleReturn().getVehicleByNumber(txtVehicleNumber.getText());
+                int routeByName = new VehicleReturn().getVehicleByNumber(txtVehicleNumberVR.getText());
                 txtVehicleIdVR.setText(String.valueOf(routeByName));
             } catch (Exception e) {
                 e.printStackTrace();
@@ -3161,7 +3168,7 @@ public class Delivery extends javax.swing.JPanel {
                 }
             }
         }
-    }//GEN-LAST:event_txtVehicleNumberKeyTyped
+    }//GEN-LAST:event_txtVehicleNumberVRKeyTyped
 
     private void txtRouteNameVRKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRouteNameVRKeyTyped
         // TODO add your handling code here:
@@ -3713,8 +3720,8 @@ public class Delivery extends javax.swing.JPanel {
     private javax.swing.JTextField txtVehicleIdSP;
     private javax.swing.JTextField txtVehicleIdVR;
     private javax.swing.JTextField txtVehicleNameSP;
-    private javax.swing.JTextField txtVehicleNumber;
     private javax.swing.JTextField txtVehicleNumberR;
+    private javax.swing.JTextField txtVehicleNumberVR;
     private javax.swing.JTextField txtVehicleiNumberDI;
     // End of variables declaration//GEN-END:variables
 }
