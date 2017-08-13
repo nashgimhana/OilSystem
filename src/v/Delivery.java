@@ -3296,6 +3296,20 @@ public class Delivery extends javax.swing.JPanel {
         if (tblItemDI.getRowCount() == 0) {
             JOptionPane.showMessageDialog(this, "Please enter minimum one to the table.", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
+
+            DeliverDetail.setDcDeleverDateVR(dcDeleverDateVR);
+            DeliverDetail.setTxtRouteIdVR(txtRouteIdVR);
+            DeliverDetail.setTxtRouteNameVR(txtRouteNameVR);
+            DeliverDetail.setTxtVehicleIdVR(txtVehicleIdVR);
+            DeliverDetail.setTxtVehicleNumberVR(txtVehicleNumberVR);
+            DeliverDetail.setTblItemVR(tblItemVR);
+
+            DeliverDetail.getDcDeleverDateVR().setDate(dcDeleverDateSP.getDate());
+            DeliverDetail.getTxtRouteIdVR().setText(txtRouteIdSP.getText());
+            DeliverDetail.getTxtRouteNameVR().setText(txtRouteNameSP.getText());
+            DeliverDetail.getTxtVehicleIdVR().setText(txtVehicleIdSP.getText());
+            DeliverDetail.getTxtVehicleNumberVR().setText(txtVehicleNameSP.getText());
+            
             new v.frmDeliveryInvoice(tblItemDI, txtRouteIdDI, jTabbedPane1).setVisible(true);
         }
 

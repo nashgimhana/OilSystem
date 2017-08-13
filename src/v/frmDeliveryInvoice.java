@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import m.DeliverDetail;
 import m.ValueValidation;
 import pojo.Customer;
 import static v.frmDeleverySummery.tpDelivery;
@@ -43,7 +44,7 @@ public class frmDeliveryInvoice extends javax.swing.JFrame {
      * @param tblDI
      * @param txtRouteIdDI
      */
-    public frmDeliveryInvoice(JTable tblDI, JTextField txtRouteIdDI,JTabbedPane tpDelivery) {
+    public frmDeliveryInvoice(JTable tblDI, JTextField txtRouteIdDI, JTabbedPane tpDelivery) {
         initComponents();
         validation = new ValueValidation();
         ac = new AutoComplete();
@@ -707,6 +708,13 @@ public class frmDeliveryInvoice extends javax.swing.JFrame {
                 assetControl.updateCashAsset(Math.round(amount * 100.0) / 100.0, '+');
                 JOptionPane.showMessageDialog(rootPane, "Receipt save successful", "Receipt Save", JOptionPane.INFORMATION_MESSAGE);
                 tpDelivery.setSelectedIndex(3);
+
+                try {
+                    new c.VehicleReturn().addItem(DeliverDetail.getTxtVehicleIdVR(), DeliverDetail.getTxtRouteIdVR(), DeliverDetail.getDcDeleverDateVR(), DeliverDetail.getTblItemVR());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 this.dispose();
             }
         }
@@ -854,7 +862,7 @@ public class frmDeliveryInvoice extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmDeliveryInvoice(tblDI, txtRouteIdDI,tpDelivery).setVisible(true);
+                new frmDeliveryInvoice(tblDI, txtRouteIdDI, tpDelivery).setVisible(true);
             }
         });
     }
