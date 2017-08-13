@@ -3309,7 +3309,7 @@ public class Delivery extends javax.swing.JPanel {
             DeliverDetail.getTxtRouteNameVR().setText(txtRouteNameSP.getText());
             DeliverDetail.getTxtVehicleIdVR().setText(txtVehicleIdSP.getText());
             DeliverDetail.getTxtVehicleNumberVR().setText(txtVehicleNameSP.getText());
-            
+
             new v.frmDeliveryInvoice(tblItemDI, txtRouteIdDI, jTabbedPane1).setVisible(true);
         }
 
