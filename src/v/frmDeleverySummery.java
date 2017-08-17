@@ -556,7 +556,7 @@ public class frmDeleverySummery extends javax.swing.JFrame {
                 } else if (conformInvoice == 1) {
                     int conformReturn = JOptionPane.showConfirmDialog(rootPane, "Do you return your delivery ?", "Deliver Return", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (conformReturn == 0) {
-                        tpDelivery.setSelectedIndex(2);
+                        tpDelivery.setSelectedIndex(3);
                         DeliverDetail.getDcDeleverDateVR().setDate(dcDeliverDate.getDate());
                         DeliverDetail.getTxtRouteIdVR().setText(txtRouteId.getText());
                         DeliverDetail.getTxtRouteNameVR().setText(txtRouteName.getText());
