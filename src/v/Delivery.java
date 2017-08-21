@@ -136,7 +136,7 @@ public class Delivery extends javax.swing.JPanel {
         ac.autocompleteRouteRegNam(txtRouteNameVR);
         ac.autoCompleteVehicleNumber(txtVehicleNumberVR);
         ac.autocompleteRouteRegNam(txtRouteNameDI);
-        ac.autoCompleteVehicleNumber(txtVehicleiNumberDI);
+        ac.autoCompleteVehicleNumber(txtVehicleNumberDI);
         ac.autocompleteRouteRegNam(txtRouteNameSP);
         ac.autoCompleteVehicleNumber(txtVehicleNameSP);
         ac.autocompleteRouteRegNam(txtRouteNameR);
@@ -262,7 +262,7 @@ public class Delivery extends javax.swing.JPanel {
         txtRouteIdDI = new javax.swing.JTextField();
         txtRouteNameDI = new javax.swing.JTextField();
         txtVehicleIdDI = new javax.swing.JTextField();
-        txtVehicleiNumberDI = new javax.swing.JTextField();
+        txtVehicleNumberDI = new javax.swing.JTextField();
         txtPnameDI = new javax.swing.JTextField();
         txtPUnitDI = new javax.swing.JTextField();
         txtUnitPriceDI = new javax.swing.JTextField();
@@ -1166,7 +1166,7 @@ public class Delivery extends javax.swing.JPanel {
         txtRouteNameDI.setBackground(new java.awt.Color(240, 240, 240));
         txtRouteNameDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtRouteNameDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtRouteNameDI.setNextFocusableComponent(txtVehicleiNumberDI);
+        txtRouteNameDI.setNextFocusableComponent(txtVehicleNumberDI);
         txtRouteNameDI.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtRouteNameDIKeyTyped(evt);
@@ -1184,20 +1184,20 @@ public class Delivery extends javax.swing.JPanel {
         });
         jPanel53.add(txtVehicleIdDI);
 
-        txtVehicleiNumberDI.setBackground(new java.awt.Color(240, 240, 240));
-        txtVehicleiNumberDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtVehicleiNumberDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtVehicleiNumberDI.addActionListener(new java.awt.event.ActionListener() {
+        txtVehicleNumberDI.setBackground(new java.awt.Color(240, 240, 240));
+        txtVehicleNumberDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtVehicleNumberDI.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtVehicleNumberDI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtVehicleiNumberDIActionPerformed(evt);
+                txtVehicleNumberDIActionPerformed(evt);
             }
         });
-        txtVehicleiNumberDI.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtVehicleNumberDI.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtVehicleiNumberDIKeyTyped(evt);
+                txtVehicleNumberDIKeyTyped(evt);
             }
         });
-        jPanel53.add(txtVehicleiNumberDI);
+        jPanel53.add(txtVehicleNumberDI);
 
         txtPnameDI.setBackground(new java.awt.Color(240, 240, 240));
         txtPnameDI.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2616,7 +2616,7 @@ public class Delivery extends javax.swing.JPanel {
             DeliverDetail.setTxtRouteIdDI(txtRouteIdDI);
             DeliverDetail.setTxtRouteNameDI(txtRouteNameDI);
             DeliverDetail.setTxtVehicleIdDI(txtVehicleIdDI);
-            DeliverDetail.setTxtVehicleiNumberDI(txtVehicleiNumberDI);
+            DeliverDetail.setTxtVehicleiNumberDI(txtVehicleNumberDI);
 
             DeliverDetail.setDcDeleverDateSP(dcDeleverDateSP);
             DeliverDetail.setTxtRouteIdSP(txtRouteIdSP);
@@ -3092,7 +3092,7 @@ public class Delivery extends javax.swing.JPanel {
         DeliverDetail.setTxtRouteIdDI(txtRouteIdDI);
         DeliverDetail.setTxtRouteNameDI(txtRouteNameDI);
         DeliverDetail.setTxtVehicleIdDI(txtVehicleIdDI);
-        DeliverDetail.setTxtVehicleiNumberDI(txtVehicleiNumberDI);
+        DeliverDetail.setTxtVehicleiNumberDI(txtVehicleNumberDI);
 
         DeliverDetail.setDcDeleverDateSP(dcDeleverDateSP);
         DeliverDetail.setTxtRouteIdSP(txtRouteIdSP);
@@ -3250,15 +3250,15 @@ public class Delivery extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtPnameDIKeyTyped
 
-    private void txtVehicleiNumberDIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVehicleiNumberDIActionPerformed
+    private void txtVehicleNumberDIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVehicleNumberDIActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtVehicleiNumberDIActionPerformed
+    }//GEN-LAST:event_txtVehicleNumberDIActionPerformed
 
-    private void txtVehicleiNumberDIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVehicleiNumberDIKeyTyped
+    private void txtVehicleNumberDIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVehicleNumberDIKeyTyped
         // TODO add your handling code here:
         if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
             try {
-                int routeByName = new VehicleReturn().getVehicleByNumber(txtVehicleiNumberDI.getText());
+                int routeByName = new VehicleReturn().getVehicleByNumber(txtVehicleNumberDI.getText());
                 txtVehicleIdDI.setText(String.valueOf(routeByName));
             } catch (Exception e) {
                 e.printStackTrace();
@@ -3266,7 +3266,7 @@ public class Delivery extends javax.swing.JPanel {
 //            
 //            new c.VehicleReturn().addItem(txtVehicleId, txtRouteId, dcDeleverDate, tblItemVR);
         }
-    }//GEN-LAST:event_txtVehicleiNumberDIKeyTyped
+    }//GEN-LAST:event_txtVehicleNumberDIKeyTyped
 
     private void btnAddItem1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddItem1MouseReleased
         // TODO add your handling code here:
@@ -3304,11 +3304,11 @@ public class Delivery extends javax.swing.JPanel {
             DeliverDetail.setTxtVehicleNumberVR(txtVehicleNumberVR);
             DeliverDetail.setTblItemVR(tblItemVR);
 
-            DeliverDetail.getDcDeleverDateVR().setDate(dcDeleverDateSP.getDate());
-            DeliverDetail.getTxtRouteIdVR().setText(txtRouteIdSP.getText());
-            DeliverDetail.getTxtRouteNameVR().setText(txtRouteNameSP.getText());
-            DeliverDetail.getTxtVehicleIdVR().setText(txtVehicleIdSP.getText());
-            DeliverDetail.getTxtVehicleNumberVR().setText(txtVehicleNameSP.getText());
+            DeliverDetail.getDcDeleverDateVR().setDate(dcDeleverDateDI.getDate());
+            DeliverDetail.getTxtRouteIdVR().setText(txtRouteIdDI.getText());
+            DeliverDetail.getTxtRouteNameVR().setText(txtRouteNameDI.getText());
+            DeliverDetail.getTxtVehicleIdVR().setText(txtVehicleIdDI.getText());
+            DeliverDetail.getTxtVehicleNumberVR().setText(txtVehicleNumberDI.getText());
 
             new v.frmDeliveryInvoice(tblItemDI, txtRouteIdDI, jTabbedPane1).setVisible(true);
         }
@@ -3782,8 +3782,8 @@ public class Delivery extends javax.swing.JPanel {
     private javax.swing.JTextField txtVehicleIdSP;
     private javax.swing.JTextField txtVehicleIdVR;
     private javax.swing.JTextField txtVehicleNameSP;
+    private javax.swing.JTextField txtVehicleNumberDI;
     private javax.swing.JTextField txtVehicleNumberR;
     private javax.swing.JTextField txtVehicleNumberVR;
-    private javax.swing.JTextField txtVehicleiNumberDI;
     // End of variables declaration//GEN-END:variables
 }

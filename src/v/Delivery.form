@@ -1580,7 +1580,7 @@
                                   </Border>
                                 </Property>
                                 <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                                  <ComponentRef name="txtVehicleiNumberDI"/>
+                                  <ComponentRef name="txtVehicleNumberDI"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -1607,7 +1607,7 @@
                                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtVehicleIdDIKeyTyped"/>
                               </Events>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="txtVehicleiNumberDI">
+                            <Component class="javax.swing.JTextField" name="txtVehicleNumberDI">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="f0" green="f0" red="f0" type="rgb"/>
@@ -1624,8 +1624,8 @@
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtVehicleiNumberDIActionPerformed"/>
-                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtVehicleiNumberDIKeyTyped"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtVehicleNumberDIActionPerformed"/>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtVehicleNumberDIKeyTyped"/>
                               </Events>
                             </Component>
                             <Component class="javax.swing.JTextField" name="txtPnameDI">

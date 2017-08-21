@@ -43,6 +43,7 @@ public class frmDeliveryInvoice extends javax.swing.JFrame {
      *
      * @param tblDI
      * @param txtRouteIdDI
+     * @param tpDelivery
      */
     public frmDeliveryInvoice(JTable tblDI, JTextField txtRouteIdDI, JTabbedPane tpDelivery) {
         initComponents();
