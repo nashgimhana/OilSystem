@@ -21,7 +21,7 @@ import net.sf.jasperreports.view.JasperViewer;
  */
 public class Psmodle {
 
-    public void report(int empid, int bsid) {  
+    public void report(int empid, int bsid) {
         String path = "C:\\Program Files\\Common Files\\Report\\sp.jrxml";
         try {
             JasperReport RI = JasperCompileManager.compileReport(path);
@@ -37,17 +37,17 @@ public class Psmodle {
             e.printStackTrace();
         }
     }
-    
-    
+
     public static void main(String[] args) {
-       // new Psmodle().invoiceReport(2, 350.00);
+        // new Psmodle().invoiceReport(2, 350.00);
+       //   grn(3);
     }
-    
-    public void invoiceReport(int inid, double credit, double payedValue) {  
-        
-        System.out.println("============================"+inid);
-        System.out.println("============================"+credit);
-        
+
+    public void invoiceReport(int inid, double credit, double payedValue) {
+
+        System.out.println("============================" + inid);
+        System.out.println("============================" + credit);
+
         String path = "C:\\Program Files\\Common Files\\Report\\in.jrxml";
         try {
             JasperReport RI = JasperCompileManager.compileReport(path);
@@ -64,14 +64,12 @@ public class Psmodle {
             e.printStackTrace();
         }
     }
-    
-    
-    public void newInvoice(int invoiceid, double paidamount, double billamount,double paidcredit,double added_credit) {  
-        
+
+    public void newInvoice(int invoiceid, double paidamount, double billamount, double paidcredit, double added_credit) {
+
 //        System.out.println("============================"+inid);
 //        System.out.println("============================"+credit);
-        
-        String path = "C:\\Program Files\\Common Files\\Report\\newinvoice.jrxml";
+        String path = "C:\\Program Files\\Common Files\\Report\\newinvoice.jrxml"; 
         try {
             JasperReport RI = JasperCompileManager.compileReport(path);
             Map<String, Object> parameter = new HashMap<String, Object>();
@@ -79,7 +77,7 @@ public class Psmodle {
             parameter.put("paidamount", paidamount);
             parameter.put("billamount", billamount);
             parameter.put("paidcredit", paidcredit);
-            parameter.put("added_credit", added_credit);           
+            parameter.put("added_credit", added_credit);
             JasperPrint printit = JasperFillManager.fillReport(RI, parameter, DB.getConnection());
             new JRViewer(printit);
             //JasperPrintManager.printReport(printit, false);
@@ -89,7 +87,23 @@ public class Psmodle {
             e.printStackTrace();
         }
     }
-    
-    
+
+    public void grn(int grnid) {
+
+        String path = "D:\\Data\\XOcodes\\oil\\OilSystem\\src\\report\\GRNreport.jrxml"; // me path eka wenas karaganna
+        try {
+            JasperReport RI = JasperCompileManager.compileReport(path);
+            Map<String, Object> parameter = new HashMap<String, Object>();
+            parameter.put("grnid", grnid);
+            JasperPrint printit = JasperFillManager.fillReport(RI, parameter, DB.getConnection());
+            new JRViewer(printit);
+            //JasperPrintManager.printReport(printit, false);
+            JasperViewer.viewReport(printit, false);
+        } catch (Exception e) {
+            Toolkit.getDefaultToolkit().beep();
+            e.printStackTrace();
+        }
+    }
+
     
 }
