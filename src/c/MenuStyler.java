@@ -57,7 +57,7 @@ public class MenuStyler implements MouseListener{
         }else if(e.getSource()==this.home.lbl_selfproduct){
             c.View.getInstance().setSelfproducttodPane(v.Home.getInstance().dpnl_contain);
         }else if(e.getSource()==this.home.lbl_backup){
-            c.View.getInstance().setSelfproducttodPane(v.Home.getInstance().dpnl_contain);
+            c.View.getInstance().setBackupPane(v.Home.getInstance().dpnl_contain);
         }
     }
 
