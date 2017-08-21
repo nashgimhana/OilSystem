@@ -53,20 +53,20 @@ public class StatusListner implements AncestorListener {
             this.status.lbl_expend_today.setText(validation.toDeciaml(moneyBook.getTotalExpendBy(new Date()), 2));
             this.status.lbl_customer_count.setText(new m.Customer().getCustomerCount()+"");
             customerCredit=new m.CusCredit().getTotalCredit();
-            this.status.lbl_customer_total_credit.setText(customerCredit+"");
+            this.status.lbl_customer_total_credit.setText(validation.toDeciaml(customerCredit, 2));
             this.status.lbl_employee_count.setText(new m.Employee().getEmployeeCount()+"");
             cash=new m.AssetStatus().getById(1).getAmount();
             bank=new m.Bank().getTotal();
             supplierCredit=new m.Supplier().getTotalCredit();
             routeCredit=new m.RouteReg().getTotalCredit();
-            this.status.lbl_cash_total.setText(validation.toDeciaml(cash, 2)+"");
-            this.status.lbl_bank_total.setText(validation.toDeciaml(bank, 2)+"");
-            this.status.lbl_total_cash.setText(validation.toDeciaml(bank+cash, 2)+"");
+            this.status.lbl_cash_total.setText(validation.toDeciaml(cash, 2));
+            this.status.lbl_bank_total.setText(validation.toDeciaml(bank, 2));
+            this.status.lbl_total_cash.setText(validation.toDeciaml(bank+cash, 2));
             this.status.lbl_supplier_credit.setText("("+validation.toDeciaml(supplierCredit, 2)+")");
             this.status.lbl_customer_credit.setText("("+validation.toDeciaml(customerCredit, 2)+")");
             this.status.lbl_route_credit.setText("("+validation.toDeciaml(routeCredit, 2)+")");
             this.status.lbl_total_credit_receive.setText("("+validation.toDeciaml(routeCredit+customerCredit, 2)+")");
-            this.status.lbl_balance.setText(validation.toDeciaml((cash+bank)-(routeCredit+customerCredit+supplierCredit), 2)+"");
+            this.status.lbl_balance.setText(validation.toDeciaml((cash+bank)-(routeCredit+customerCredit+supplierCredit), 2));
         }
     }
 
