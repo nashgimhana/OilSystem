@@ -88,7 +88,7 @@ public class Psmodle {
         }
     }
 
-    public void grn(int grnid) {
+    public void grn(int grnid) { //grn report
 
         String path = "D:\\Data\\XOcodes\\oil\\OilSystem\\src\\report\\GRNreport.jrxml"; // me path eka wenas karaganna
         try {
