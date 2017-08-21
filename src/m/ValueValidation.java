@@ -99,13 +99,13 @@ public class ValueValidation {
         }
     }
 
-    public double toDeciaml(double number, int poinTo) {
+    public String toDeciaml(double number, int poinTo) {
         String to = "0.";
         for (int i = 0; i < poinTo; i++) {
             to += "0";
         }
         DecimalFormat decimalFormat = new DecimalFormat(to);
-        return Double.parseDouble(decimalFormat.format(number));
+        return decimalFormat.format(number);
     }
 
     /**

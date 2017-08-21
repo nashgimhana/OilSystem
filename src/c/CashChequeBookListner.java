@@ -297,7 +297,7 @@ public class CashChequeBookListner extends MouseAdapter implements ComponentList
                     try {
                         if (setCashDealDate(this.Cash_Check_Book.jdc_cash_dealdate.getDate())) {
                             if (setDealType(new m.DealType().getByName(this.Cash_Check_Book.cmb_cash_dealtype.getSelectedItem().toString()))) {
-                                if (setCashAmount(m.ValueValidation.getInstance().toDeciaml(Double.parseDouble(this.Cash_Check_Book.txt_cash_amount.getText()), 2))) {
+                                if (setCashAmount(Double.parseDouble(m.ValueValidation.getInstance().toDeciaml(Double.parseDouble(this.Cash_Check_Book.txt_cash_amount.getText()), 2)))) {
                                     if (setDealCategory(new m.DealCategory().getByName(this.Cash_Check_Book.cmb_cash_dealcategory.getSelectedItem().toString()))) {
 
                                         this.cashDescrip = this.Cash_Check_Book.jta_cash_descrip.getText();
@@ -326,7 +326,7 @@ public class CashChequeBookListner extends MouseAdapter implements ComponentList
                 else if (e.getSource() == this.Cash_Check_Book.btn_add_chequedeal) {
                     if (setChequeDealDate(this.Cash_Check_Book.jdc_cheque_dealdate.getDate())) {
                         if (setDealType(new m.DealType().getByName(this.Cash_Check_Book.cmb_cheque_dealtype.getSelectedItem().toString()))) {
-                            if (setChequeAmount(m.ValueValidation.getInstance().toDeciaml(Double.parseDouble(this.Cash_Check_Book.txt_cheque_amount.getText()), 2))) {
+                            if (setChequeAmount(Double.parseDouble(m.ValueValidation.getInstance().toDeciaml(Double.parseDouble(this.Cash_Check_Book.txt_cheque_amount.getText()), 2)))) {
                                 if (setDealCategory(new m.DealCategory().getByName(this.Cash_Check_Book.cmb_cheque_dealcategory.getSelectedItem().toString()))) {
                                     if (setChequeNumber(this.Cash_Check_Book.txt_cheque_number.getText())) {
                                         if (setBank(new m.Bank().getBy(this.Cash_Check_Book.cmb_bank.getSelectedItem().toString()))) {
@@ -356,7 +356,7 @@ public class CashChequeBookListner extends MouseAdapter implements ComponentList
                 else if (e.getSource() == this.Cash_Check_Book.btn_add_chequedeal) {
                     if (setChequeDealDate(this.Cash_Check_Book.jdc_cheque_dealdate.getDate())) {
                         if (setDealType(new m.DealType().getByName(this.Cash_Check_Book.cmb_cheque_dealtype.getSelectedItem().toString()))) {
-                            if (setChequeAmount(m.ValueValidation.getInstance().toDeciaml(Double.parseDouble(this.Cash_Check_Book.txt_cheque_amount.getText()), 2))) {
+                            if (setChequeAmount(Double.parseDouble(m.ValueValidation.getInstance().toDeciaml(Double.parseDouble(this.Cash_Check_Book.txt_cheque_amount.getText()), 2)))) {
                                 if (setDealCategory(new m.DealCategory().getByName(this.Cash_Check_Book.cmb_cheque_dealcategory.getSelectedItem().toString()))) {
                                     if (setChequeNumber(this.Cash_Check_Book.txt_cheque_number.getText())) {
                                         if (setBank(new m.Bank().getBy(this.Cash_Check_Book.cmb_bank.getSelectedItem().toString()))) {
@@ -1249,7 +1249,7 @@ public class CashChequeBookListner extends MouseAdapter implements ComponentList
     private void loadSupplierSummory() {
         if (this.Cash_Check_Book != null) {
             Supplier supplier = new m.Supplier();
-            this.Cash_Check_Book.lbl_supplier_total_credit.setText(supplier.getTotalCredit() + "");
+            this.Cash_Check_Book.lbl_supplier_total_credit.setText(m.ValueValidation.getInstance().toDeciaml(supplier.getTotalCredit(), 2));
             ArrayList<pojo.Supplier> viewAllSuppliers = supplier.viewAllSuppliers();
             if (viewAllSuppliers != null && !viewAllSuppliers.isEmpty()) {
                 DefaultTableModel dtm = (DefaultTableModel) this.Cash_Check_Book.tbl_supplier_current_credit.getModel();
@@ -1321,7 +1321,7 @@ public class CashChequeBookListner extends MouseAdapter implements ComponentList
     private void loadBankSummory() {
         if (this.Cash_Check_Book != null) {
             m.Bank bank = new m.Bank();
-            this.Cash_Check_Book.lbl_bank_total.setText(bank.getTotal() + "");
+            this.Cash_Check_Book.lbl_bank_total.setText(m.ValueValidation.getInstance().toDeciaml(bank.getTotal(), 2));
             List<pojo.Bank> list = bank.getAll();
             if (list != null && !list.isEmpty()) {
                 DefaultTableModel dtm = (DefaultTableModel) this.Cash_Check_Book.tbl_bank_current_status.getModel();
@@ -1345,7 +1345,7 @@ public class CashChequeBookListner extends MouseAdapter implements ComponentList
     private void loadCashSummory() {
         if (this.Cash_Check_Book != null) {
             pojo.AssetStatus Cash = new m.AssetStatus().getById(1);
-            this.Cash_Check_Book.lbl_cash_current_status.setText(Cash.getAmount() + "");
+            this.Cash_Check_Book.lbl_cash_current_status.setText(m.ValueValidation.getInstance().toDeciaml(Cash.getAmount(), 2));
             List<pojo.MoneyBook> list = new m.MoneyBook().getLastCashDeals(7);
             if (list != null && !list.isEmpty()) {
                 DefaultTableModel dtm = (DefaultTableModel) this.Cash_Check_Book.tbl_cash_last_status.getModel();
