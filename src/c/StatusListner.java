@@ -49,8 +49,8 @@ public class StatusListner implements AncestorListener {
             setProductSummoryToTable(this.status.tbl_currentstock);
             MoneyBook moneyBook = new m.MoneyBook();
             ValueValidation validation = m.ValueValidation.getInstance();
-            this.status.lbl_income_today.setText(validation.toDeciaml(moneyBook.getTotalIncomeBy(new Date()), 2) + "");
-            this.status.lbl_expend_today.setText(validation.toDeciaml(moneyBook.getTotalExpendBy(new Date()), 2) + "");
+            this.status.lbl_income_today.setText(validation.toDeciaml(moneyBook.getTotalIncomeBy(new Date()), 2));
+            this.status.lbl_expend_today.setText(validation.toDeciaml(moneyBook.getTotalExpendBy(new Date()), 2));
             this.status.lbl_customer_count.setText(new m.Customer().getCustomerCount()+"");
             customerCredit=new m.CusCredit().getTotalCredit();
             this.status.lbl_customer_total_credit.setText(customerCredit+"");
