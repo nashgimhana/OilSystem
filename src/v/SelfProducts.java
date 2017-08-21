@@ -10,6 +10,7 @@ import c.Errormzg;
 import c.selfproductcontroller;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import pojo.GrnLog;
 import pojo.Product;
 import pojo.Units;
@@ -28,6 +29,7 @@ public class SelfProducts extends javax.swing.JPanel {
 
     public SelfProducts() {
         initComponents();
+        loadProductToCombo();
 
     }
 
@@ -37,6 +39,13 @@ public class SelfProducts extends javax.swing.JPanel {
         }
 
         return selfProducts;
+    }
+     public void loadProductToCombo() {
+        cmbtargetproduct.removeAllItems();
+        ArrayList<Product> all = new m.Product().getAll();
+        for (Product product : all) {
+            cmbtargetproduct.addItem(product.getName());
+        }
     }
 
     /**
@@ -53,6 +62,7 @@ public class SelfProducts extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -61,6 +71,7 @@ public class SelfProducts extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         mixdate = new com.toedter.calendar.JDateChooser();
+        cmbtargetproduct = new javax.swing.JComboBox<>();
         txtpr1name = new javax.swing.JTextField();
         txtpr1quantity = new javax.swing.JTextField();
         txtpr2name = new javax.swing.JTextField();
@@ -70,11 +81,11 @@ public class SelfProducts extends javax.swing.JPanel {
         btnadd = new javax.swing.JButton();
         btnreset = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        lblpr1qty = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         lblpr2qty = new javax.swing.JLabel();
+        lblpr1qty = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -114,14 +125,18 @@ public class SelfProducts extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 413, 210, 26));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 210, 26));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new java.awt.GridLayout(7, 0, 0, 30));
+        jPanel3.setLayout(new java.awt.GridLayout(8, 0, 0, 30));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("Date");
         jPanel3.add(jLabel8);
+
+        jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel23.setText("Target product");
+        jPanel3.add(jLabel23);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("Product 1 Name");
@@ -147,14 +162,16 @@ public class SelfProducts extends javax.swing.JPanel {
         jLabel13.setText("Average Price");
         jPanel3.add(jLabel13);
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 184, 396));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 184, 450));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(new java.awt.GridLayout(7, 0, 0, 30));
+        jPanel4.setLayout(new java.awt.GridLayout(8, 0, 0, 30));
 
         mixdate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 0)));
         mixdate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel4.add(mixdate);
+
+        jPanel4.add(cmbtargetproduct);
 
         txtpr1name.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtpr1name.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 0)));
@@ -268,7 +285,7 @@ public class SelfProducts extends javax.swing.JPanel {
         });
         jPanel4.add(txtaverageprice);
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 11, 318, 396));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 11, 318, 450));
 
         btnadd.setBackground(new java.awt.Color(255, 255, 255));
         btnadd.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -284,7 +301,7 @@ public class SelfProducts extends javax.swing.JPanel {
                 btnaddKeyTyped(evt);
             }
         });
-        jPanel1.add(btnadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 433, 121, 50));
+        jPanel1.add(btnadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 121, 50));
 
         btnreset.setBackground(new java.awt.Color(255, 255, 255));
         btnreset.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -295,32 +312,30 @@ public class SelfProducts extends javax.swing.JPanel {
                 btnresetMouseReleased(evt);
             }
         });
-        jPanel1.add(btnreset, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 433, 121, 50));
+        jPanel1.add(btnreset, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, 121, 50));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setLayout(new java.awt.GridLayout(1, 2));
-
-        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel1.setText("Availabale quantity(KG) ");
-        jPanel5.add(jLabel1);
-
-        lblpr1qty.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jPanel5.add(lblpr1qty);
-
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(532, 75, 238, 30));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new java.awt.GridLayout(1, 2));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(532, 193, -1, 31));
 
         jLabel2.setForeground(new java.awt.Color(255, 0, 51));
         jLabel2.setText("Availabale quantity (KG) ");
-        jPanel6.add(jLabel2);
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, -1, 31));
 
         lblpr2qty.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         lblpr2qty.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel6.add(lblpr2qty);
+        jPanel1.add(lblpr2qty, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 310, 119, 31));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(532, 193, -1, 31));
+        lblpr1qty.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jPanel1.add(lblpr1qty, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 190, 119, 30));
+
+        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel1.setText("Availabale quantity(KG) ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 119, 30));
 
         jTabbedPane1.addTab("Add Product Mix", jPanel1);
 
@@ -584,7 +599,7 @@ public class SelfProducts extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -773,10 +788,10 @@ public class SelfProducts extends javax.swing.JPanel {
                 if (pr2stock <= findPridByName2.getCurrentStock()) {
                     int mixquantity = new c.selfproductcontroller().getStockToMix(findPridByName1, findPridByName2, pr1stock, pr2stock);
                     if (mixquantity != 0) {
-                        GrnLog grnlogpojo = new c.selfproductcontroller().savegrnlog(mixdate.getDate(), mixstock, averageprice);
+                        GrnLog grnlogpojo = new c.selfproductcontroller().savegrnlog(mixdate.getDate(), mixstock, averageprice,cmbtargetproduct.getSelectedItem().toString());
                         if (grnlogpojo != null) {
                             new c.selfproductcontroller().savemix(findPridByName1, findPridByName2, pr1stock, pr2stock, mixdate.getDate(), mixstock, averageprice, grnlogpojo);
-                            pojo.Product pr = new m.Product().getBy(1);
+                            pojo.Product pr = new m.Product().getByName(cmbtargetproduct.getSelectedItem().toString());
 
                             int i = new c.StockControler().getaverageprice(pr);
                             if (i != 0) {
@@ -1347,6 +1362,7 @@ public class SelfProducts extends javax.swing.JPanel {
     private javax.swing.JButton btnbtadd;
     private javax.swing.JButton btnreset;
     private javax.swing.JButton btnreset1;
+    private javax.swing.JComboBox<String> cmbtargetproduct;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1362,6 +1378,7 @@ public class SelfProducts extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

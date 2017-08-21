@@ -116,8 +116,9 @@ public class selfproductcontroller {
 
     }
 
-    public GrnLog savegrnlog(Date date, double quantity, double price) {
+    public GrnLog savegrnlog(Date date, double quantity, double price,String targetprname) {
         try {
+
             Supplier sup = new m.Supplier().getBy(1);
             Grn grnpojo = new Grn();
             grnpojo.setSupplier(sup);
@@ -125,7 +126,7 @@ public class selfproductcontroller {
             int grnid = new m.Grn().saveGrn(grnpojo);
             Grn grnobj = new m.Grn().getBy(grnid);
 
-            Product prid = new m.Product().getBy(1);
+            Product prid = new m.Product().getByName(targetprname);
 
             GrnLog grnlgpojo = new GrnLog();
             grnlgpojo.setGrn(grnobj);
