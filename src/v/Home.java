@@ -57,6 +57,7 @@ public class Home extends javax.swing.JFrame {
         lbl_supplier = new javax.swing.JLabel();
         lbl_Customer = new javax.swing.JLabel();
         lbl_Invoice = new javax.swing.JLabel();
+        lbl_backup = new javax.swing.JLabel();
         pnl_container = new javax.swing.JPanel();
         dpnl_contain = new javax.swing.JDesktopPane();
 
@@ -183,6 +184,15 @@ public class Home extends javax.swing.JFrame {
         lbl_supplier.addMouseListener(c.MenuStyler.getInstance());
         pnl_menu.add(lbl_Invoice);
 
+        lbl_backup.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_backup.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbl_backup.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_backup.setText("Backup");
+        lbl_backup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl_backup.setOpaque(true);
+        lbl_supplier.addMouseListener(c.MenuStyler.getInstance());
+        pnl_menu.add(lbl_backup);
+
         pnl_body.add(pnl_menu);
 
         pnl_container.setLayout(new java.awt.BorderLayout());
@@ -254,6 +264,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     public javax.swing.JLabel lbl_Customer;
     public javax.swing.JLabel lbl_Invoice;
+    public javax.swing.JLabel lbl_backup;
     private javax.swing.JLabel lbl_baner;
     public javax.swing.JLabel lbl_cashcheck;
     public javax.swing.JLabel lbl_employee;
