@@ -28,13 +28,12 @@ public class Login {
 
             if (log != null) {
                 System.out.println("Login Sucsees");
-                new v.Home().setVisible(true);
+                v.Home.getInstance().setVisible(true);
                 frame.dispose();
             } else {
                 System.out.println("Try Again");
                 JOptionPane.showMessageDialog(frame, "Username or Password is wrong");
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
