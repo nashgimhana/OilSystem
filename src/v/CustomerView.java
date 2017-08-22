@@ -413,6 +413,11 @@ public class CustomerView extends javax.swing.JPanel {
         pnl_payment_cash.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true), "Cash", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), new java.awt.Color(102, 102, 102))); // NOI18N
 
         txt_cash_amount.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txt_cash_amount.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_cash_amountKeyTyped(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Amount");
@@ -808,6 +813,11 @@ public class CustomerView extends javax.swing.JPanel {
         }
          
     }//GEN-LAST:event_btn_acceptpaymentMouseReleased
+
+    private void txt_cash_amountKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_cash_amountKeyTyped
+         // TODO add your handling code here:
+          m.Employee.validateDouble(txt_cash_amount, evt);
+    }//GEN-LAST:event_txt_cash_amountKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
