@@ -26,7 +26,7 @@ import pojo.Supplier;
  * @author User
  */
 public class grncash extends javax.swing.JFrame {
-    
+
     Supplier supplier;
     double crntvalue;
     Date grndate;
@@ -45,9 +45,9 @@ public class grncash extends javax.swing.JFrame {
     public grncash() {
         initComponents();
         c.CashChequeBookListner.getInstance().loadBankToCombo(cmbbank);
-        
+
     }
-    
+
     public void setvalues(Supplier sup, double crntvalue, Date grndate) {
         this.supplier = sup;
         this.crntvalue = crntvalue;
@@ -57,25 +57,25 @@ public class grncash extends javax.swing.JFrame {
         lbltotal.setText(String.valueOf(crntvalue));
         lbldate.setText(grndate.toString());
     }
-    
+
     public void setgrnvaluse(pojo.Supplier supid) {
         this.findSupIdByName = supid;
     }
-    
+
     public void setgrnlogvaluse(Product prid, double buyingprice, double quantity, double tot) {
         this.findPridByName = prid;
         this.txtbuyingprice = buyingprice;
         this.txtquantity = quantity;
         this.total = tot;
     }
-    
+int grnsaveid;
     public int saveGrnNloadGrnCash() {
         try {
             st = new StockControler();
 
             //        System.out.println(findSupIdByName.getAdressLine2());
-            int grnsaveid = st.grnsave(findSupIdByName, grndate);
-            
+          grnsaveid = st.grnsave(findSupIdByName, grndate);
+
             if (grnsaveid != 0) {
                 pojo.Grn grnid = new m.Grn().getBy(grnsaveid);
                 int grnlogsave = st.grnlogsave(grnid, findPridByName, txtbuyingprice, txtquantity, total);
@@ -96,17 +96,17 @@ public class grncash extends javax.swing.JFrame {
                     return 0;
                 }
             } else {
-                
+
                 Errormzg.displayerrorMessage("Unable to save Grn");
                 return 0;
-                
+
             }
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
-            
+
         }
-        
+
     }
 
     /**
@@ -411,9 +411,9 @@ public class grncash extends javax.swing.JFrame {
     private void radiocashItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_radiocashItemStateChanged
         // TODO add your handling code here:
         if (radiocash.isSelected()) {
-            
+
         } else if (radiocheque.isSelected()) {
-            
+
         } else {
             Errormzg.displayerrorMessage("please select cash type");
         }
@@ -432,7 +432,7 @@ public class grncash extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             double totamount = 0.0;
-            
+
             DefaultTableModel defaultTableModel = (DefaultTableModel) tblchequedetails.getModel();
             if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
                 Vector v = new Vector();
@@ -444,7 +444,7 @@ public class grncash extends javax.swing.JFrame {
                             double chequeammount = Double.parseDouble(txtchequeamount.getText());
                             chequeammount = (Math.round(chequeammount * 100.0) / 100.0);
                             v.add(chequeammount);
-                            v.add(((JTextField)chkdate.getDateEditor().getUiComponent()).getText());
+                            v.add(((JTextField) chkdate.getDateEditor().getUiComponent()).getText());
                             defaultTableModel.addRow(v);
                             try {
                                 totamount = Double.parseDouble(txttototalamount.getText());
@@ -467,9 +467,9 @@ public class grncash extends javax.swing.JFrame {
                 } else {
                     Errormzg.displayerrorMessage("Empty Filds");
                 }
-                
+
             }
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -489,13 +489,11 @@ public class grncash extends javax.swing.JFrame {
                         } else {
                             Errormzg.displayerrorMessage("Please add cheques to table");
                         }
-                        
+
                     }
                     if (saved != 0) {
                         Errormzg.displayconfirmMessage("Payment Recorded");
-                        GrnReportView grnreport = new GrnReportView();
-                        grnreport.viewgrnnow(supplier, grndate, grnid, grnlgid);
-                        grnreport.setVisible(true);
+                        new report.Psmodle().grn(grnsaveid);
                         this.dispose();
                     } else {
                         Errormzg.displayerrorMessage("somthing went wrong");
@@ -507,12 +505,12 @@ public class grncash extends javax.swing.JFrame {
                 Errormzg.displayerrorMessage("please select cash type");
             }
             return 1;
-            
+
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
         }
-        
+
     }
 
     private void btnpayMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpayMouseReleased
@@ -533,7 +531,7 @@ public class grncash extends javax.swing.JFrame {
                                 } else {
                                     Errormzg.displayerrorMessage("Unable to save stock");
                                 }
-                                
+
                             } else {
                                 Errormzg.displayerrorMessage("please enter less value");
                             }
@@ -546,7 +544,7 @@ public class grncash extends javax.swing.JFrame {
         } else {
             Errormzg.displayerrorMessage("please select pay method");
         }
-        
+
 
     }//GEN-LAST:event_btnpayMouseReleased
 
@@ -560,7 +558,7 @@ public class grncash extends javax.swing.JFrame {
         if (selectedRow != -1) {
             defaultTableModel.removeRow(selectedRow);
         }
-        
+
 
     }//GEN-LAST:event_tblchequedetailsMouseClicked
 
@@ -597,7 +595,7 @@ public class grncash extends javax.swing.JFrame {
         lblsupcredit.setText("");
         DefaultTableModel model = (DefaultTableModel) this.tblchequedetails.getModel();
         model.setRowCount(0);
-        
+
     }
     private void btnresetKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnresetKeyTyped
         // TODO add your handling code here:

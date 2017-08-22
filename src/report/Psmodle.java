@@ -90,7 +90,7 @@ public class Psmodle {
 
     public void grn(int grnid) { //grn report
 
-        String path = "D:\\Data\\XOcodes\\oil\\OilSystem\\src\\report\\GRNreport.jrxml"; // me path eka wenas karaganna
+        String path = "C:\\Program Files\\Common Files\\Report\\GRNreport.jrxml"; // me path eka wenas karaganna
         try {
             JasperReport RI = JasperCompileManager.compileReport(path);
             Map<String, Object> parameter = new HashMap<String, Object>();
