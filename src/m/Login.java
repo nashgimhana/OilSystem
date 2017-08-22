@@ -28,6 +28,7 @@ public class Login {
 
             if (log != null) {
                 System.out.println("Login Sucsees");
+                new v.Home().setVisible(true);
                 frame.dispose();
             } else {
                 System.out.println("Try Again");
