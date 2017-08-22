@@ -1405,7 +1405,7 @@ public class Cash_Check_Book extends javax.swing.JPanel {
         );
 
         jPanel46.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel46.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)), "Transfer From Cash"));
+        jPanel46.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204)), "Transfer Bank To Bank"));
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel24.setText("Amount");
