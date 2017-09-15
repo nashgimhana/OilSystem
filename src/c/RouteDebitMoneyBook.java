@@ -234,6 +234,7 @@ public class RouteDebitMoneyBook {
             pojo.Bank bank = new m.Bank().getBy(bnkId);
             amount = (Math.round(amount * 100.0) / 100.0);
             double afterProcess = routeReg.getCurrentCredit()-amount;
+            System.out.println(afterProcess);
             if (afterProcess >= 0) {
                 System.out.println("Current credit amount : "+routeReg.getCurrentCredit());
                 System.out.println("After credit amount : "+(routeReg.getCurrentCredit()-amount));
