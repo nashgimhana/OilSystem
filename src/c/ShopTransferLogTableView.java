@@ -30,33 +30,38 @@ public class ShopTransferLogTableView {
             ArrayList<ShopTransfer> st = new m.ShopTransfer().viewAllShopTransfer();
             DefaultTableModel dtm = (DefaultTableModel) jTable.getModel();
             dtm.setRowCount(0);
-           
+
             for (ShopTransfer shopTransfer : st) {
-                //System.out.println("id " + shopTransfer.getId());
-                //System.out.println("date " + shopTransfer.getDate());
-                ShopTransferLog shopTransferLog = new pojo.ShopTransferLog();
-                shopTransferLog.setShopTransfer(shopTransfer);
+                Vector<Object> v = new Vector<Object>();
 
-                ShopTransferLog stl = new m.ShopTrasnferLog().getBy(shopTransfer);
-                //ShopTransferLog by = new m.ShopTrasnferLog().getBy(shopTransfer.getId());
-                //System.out.println("ShopTL " + by.getQuantity());
-                //System.out.println("ShopTLGRNLOG " + by.getGrnLog().getId());
+                System.out.println("Date : " + shopTransfer.getDate().toString());
 
-                GrnLog gl = new m.GrnLog().getBy(stl.getGrnLog().getId());
+                ShopTransferLog shopTransferLog = new m.ShopTrasnferLog().getBy(shopTransfer);
+                System.out.println("Product Quantity : " + shopTransferLog.getQuantity().toString());
 
-                Product p = new m.Product().getBy(gl.getProduct().getId());
-                //System.out.println("Product Name " + p.getName());
+                System.out.println("Grn Log id : " + shopTransferLog.getGrnLog().getId());
+                GrnLog grnLog = new m.GrnLog().getById(shopTransferLog.getGrnLog().getId());
+                System.out.println("Buying Price : " + grnLog.getBuyingPrice().toString());
 
-                //System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^shopTransferLog Detaisl quantity "+stl.getQuantity());
-                Vector<Object> vector = new Vector<Object>();
-                vector.add(shopTransfer.getId());
-                vector.add(shopTransfer.getDate());
-                vector.add(p.getName());
-                vector.add(stl.getQuantity());
-                vector.add(gl.getBuyingPrice() * stl.getQuantity());
-                dtm.addRow(vector);
-                 
+                System.out.println("Product id : " + grnLog.getProduct().getId());
+                Product product = new m.Product().getByGRNLog(grnLog);
+                System.out.println("Product name : " + product.getName());
 
+                Units units = new m.Units().getBy(product.getUnits().getId());
+                System.out.println("Unit : " + units.getUnitName());
+
+                System.out.println("Total : " + shopTransferLog.getQuantity() * grnLog.getBuyingPrice());
+
+                v.add(shopTransfer.getDate());
+                v.add(product.getName());
+                v.add(units.getUnitName());
+                v.add(shopTransferLog.getQuantity());
+                v.add(grnLog.getBuyingPrice());
+                Double Total = shopTransferLog.getQuantity() * grnLog.getBuyingPrice();
+                Total = (Math.round(Total * 100.0) / 100.0);
+                v.add(Total);
+                dtm.addRow(v);
+                System.out.println("#############################");
             }
             dtm.setNumRows(20);
 
@@ -71,52 +76,49 @@ public class ShopTransferLogTableView {
         try {
             int shopTransferByDateCheck = new m.ShopTransfer().getShopTransferByDateCheck(dateChooser.getDate());
 
-        if (shopTransferByDateCheck == 1) {
-            //Errormzg.displayerrorMessage("Please enter a date where Shop Transfer is available");
-        } else if (shopTransferByDateCheck == 2) {
-            ArrayList<ShopTransfer> st = new m.ShopTransfer().getShopTransferByDate(dateChooser.getDate());
-            DefaultTableModel dtm = (DefaultTableModel) jTable.getModel();
-            dtm.setRowCount(0);
-            for (ShopTransfer shopTransfer : st) {
-                // System.out.println("id " + shopTransfer.getId());
-                //System.out.println("date " + shopTransfer.getDate());
+            if (shopTransferByDateCheck == 1) {
+                //Errormzg.displayerrorMessage("Please enter a date where Shop Transfer is available");
+            } else if (shopTransferByDateCheck == 2) {
+                ArrayList<ShopTransfer> st = new m.ShopTransfer().getShopTransferByDate(dateChooser.getDate());
+                DefaultTableModel dtm = (DefaultTableModel) jTable.getModel();
+                dtm.setRowCount(0);
+                for (ShopTransfer shopTransfer : st) {
+                    Vector<Object> v = new Vector<Object>();
 
-                ShopTransferLog shopTransferLog = new pojo.ShopTransferLog();
-                shopTransferLog.setShopTransfer(shopTransfer);
+                    System.out.println("Date : " + shopTransfer.getDate().toString());
 
-                ShopTransferLog stl = new m.ShopTrasnferLog().getBy(shopTransfer);
-                //ShopTransferLog by = new m.ShopTrasnferLog().getBy(shopTransfer.getId());
-                //System.out.println("ShopTL " + stl.getQuantity());
-                //System.out.println("ShopTLGRNLOG " + stl.getGrnLog().getId());
-                //stl.getGrnLog().getId();
+                    ShopTransferLog shopTransferLog = new m.ShopTrasnferLog().getBy(shopTransfer);
+                    System.out.println("Product Quantity : " + shopTransferLog.getQuantity().toString());
 
-                GrnLog grnlo = new m.GrnLog().getBy(stl.getGrnLog().getId());
+                    System.out.println("Grn Log id : " + shopTransferLog.getGrnLog().getId());
+                    GrnLog grnLog = new m.GrnLog().getById(shopTransferLog.getGrnLog().getId());
+                    System.out.println("Buying Price : " + grnLog.getBuyingPrice().toString());
 
-                GrnLog grnl = new m.GrnLog().getBy(stl.getGrnLog().getId());
-                //System.out.println("qty @@@@@@@@@@@" + grnl.getQuantity());
-                //System.out.println("price @@@@@@@@@@@@@@@@@@" + grnl.getBuyingPrice());
+                    System.out.println("Product id : " + grnLog.getProduct().getId());
+                    Product product = new m.Product().getByGRNLog(grnLog);
+                    System.out.println("Product name : " + product.getName());
 
-                Product prdt = new m.Product().getBy(grnl.getProduct().getId());
-                //System.out.println("Product Name " + prdt.getName());
+                    Units units = new m.Units().getBy(product.getUnits().getId());
+                    System.out.println("Unit : " + units.getUnitName());
 
-                Vector<Object> vector = new Vector<Object>();
-                //vector.add(shopTransfer.getId());
-                vector.add(shopTransfer.getDate());
-                vector.add(prdt.getName());
-                Units unit = new m.Units().getBy(prdt.getId());
-                vector.add(unit.getUnitName());
-                vector.add(stl.getQuantity());
-                //vector.add(grnl.getBuyingPrice() * stl.getQuantity());
-                //vector.add(grnlo.getBuyingPrice());
-                vector.add(grnlo.getBuyingPrice() * stl.getQuantity());
-                dtm.addRow(vector);
-                i = 1;
+                    System.out.println("Total : " + shopTransferLog.getQuantity() * grnLog.getBuyingPrice());
 
+                    v.add(shopTransfer.getDate());
+                    v.add(product.getName());
+                    v.add(units.getUnitName());
+                    v.add(shopTransferLog.getQuantity());
+                    v.add(grnLog.getBuyingPrice());
+                    Double Total = shopTransferLog.getQuantity() * grnLog.getBuyingPrice();
+                    Total = (Math.round(Total * 100.0) / 100.0);
+                    v.add(Total);
+                    dtm.addRow(v);
+                    System.out.println("#############################");
+                    i = 1;
+                }
+
+            } else {
+                Errormzg.displayerrorMessage("Restart the software");
             }
-
-        } else {
-            Errormzg.displayerrorMessage("Restart the software");
-        }
         } catch (Exception e) {
             e.printStackTrace();
         }
