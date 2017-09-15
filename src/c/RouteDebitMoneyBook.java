@@ -238,6 +238,8 @@ public class RouteDebitMoneyBook {
             double afterProcess = routeReg.getCurrentCredit()-amount;
             System.out.println("afterProcess "+afterProcess);
             if (afterProcess >= 0) {
+                System.out.println("Current credit amount : "+routeReg.getCurrentCredit());
+                System.out.println("After credit amount : "+(routeReg.getCurrentCredit()-amount));
                 routeReg.setCurrentCredit((Math.round(afterProcess* 100.0) / 100.0));
                 int done = new m.RouteReg().updateRouteInt(routeReg);
                 if (done != 0) {
