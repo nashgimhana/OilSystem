@@ -227,8 +227,10 @@ public class RouteDebitMoneyBook {
 
     public int routeCheckProceed(int routeId, String chequeId, double amount, int bnkId) {
         try {
-//            DealCategory dealCategory = new m.DealCategory().getBy(1);
-//            DealType dealType = new m.DealType().getBy(2);
+            System.out.println("route Id="+routeId);
+            System.out.println("cheque Id="+chequeId);
+            System.out.println("amount="+amount);
+            System.out.println("bnkId="+bnkId);
             RouteReg routeReg = new m.RouteReg().getBy(routeId);
             Cheques cheques = new m.Cheques().getByChequeNumber(chequeId);
             pojo.Bank bank = new m.Bank().getBy(bnkId);
