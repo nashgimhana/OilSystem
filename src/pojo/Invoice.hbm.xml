@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Aug 2, 2017 11:22:54 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Sep 15, 2017 10:55:16 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="pojo.Invoice" table="invoice" catalog="oildb" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
@@ -16,6 +16,9 @@
         </property>
         <property name="payStatus" type="string">
             <column name="pay_status" length="45" />
+        </property>
+        <property name="deliveryId" type="java.lang.Integer">
+            <column name="delivery_id" />
         </property>
         <set name="invoiceLogs" table="invoice_log" inverse="true" lazy="true" fetch="select">
             <key>

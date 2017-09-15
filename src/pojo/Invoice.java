@@ -1,5 +1,5 @@
 package pojo;
-// Generated Aug 2, 2017 11:22:50 AM by Hibernate Tools 4.3.1
+// Generated Sep 15, 2017 10:55:14 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -16,6 +16,7 @@ public class Invoice  implements java.io.Serializable {
      private Customer customer;
      private Date date;
      private String payStatus;
+     private Integer deliveryId;
      private Set invoiceLogs = new HashSet(0);
      private Set invoicePays = new HashSet(0);
 
@@ -26,10 +27,11 @@ public class Invoice  implements java.io.Serializable {
     public Invoice(Customer customer) {
         this.customer = customer;
     }
-    public Invoice(Customer customer, Date date, String payStatus, Set invoiceLogs, Set invoicePays) {
+    public Invoice(Customer customer, Date date, String payStatus, Integer deliveryId, Set invoiceLogs, Set invoicePays) {
        this.customer = customer;
        this.date = date;
        this.payStatus = payStatus;
+       this.deliveryId = deliveryId;
        this.invoiceLogs = invoiceLogs;
        this.invoicePays = invoicePays;
     }
@@ -61,6 +63,13 @@ public class Invoice  implements java.io.Serializable {
     
     public void setPayStatus(String payStatus) {
         this.payStatus = payStatus;
+    }
+    public Integer getDeliveryId() {
+        return this.deliveryId;
+    }
+    
+    public void setDeliveryId(Integer deliveryId) {
+        this.deliveryId = deliveryId;
     }
     public Set getInvoiceLogs() {
         return this.invoiceLogs;
