@@ -232,6 +232,7 @@ public class RouteDebitMoneyBook {
             System.out.println("amount="+amount);
             System.out.println("bnkId="+bnkId);
             RouteReg routeReg = new m.RouteReg().getBy(routeId);
+            String name = routeReg.getName();
             Cheques cheques = new m.Cheques().getByChequeNumber(chequeId);
             pojo.Bank bank = new m.Bank().getBy(bnkId);
             amount = (Math.round(amount * 100.0) / 100.0);
@@ -295,7 +296,7 @@ public class RouteDebitMoneyBook {
                 }
 
             } else {
-                JOptionPane.showMessageDialog(null, "The amount you are trying pay is greater than the credit. Check again.");
+                JOptionPane.showMessageDialog(null, "The amount you are trying pay for Route '"+name+"' is greater than the credit. Check again.");
                 return 0;
             }
         } catch (Exception e) {
