@@ -293,7 +293,7 @@ public class RouteDebitMoneyBook {
                 }
 
             } else {
-                Errormzg.displayerrorMessage("unable to pay check route credit");
+                JOptionPane.showMessageDialog(null, "The amount you are trying pay is greater than the credit. Check again.");
                 return 0;
             }
         } catch (Exception e) {
