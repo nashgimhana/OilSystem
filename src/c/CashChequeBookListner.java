@@ -884,50 +884,10 @@ public class CashChequeBookListner extends MouseAdapter implements ComponentList
                     }
                     dtm.addRow(v);
                 }
-                colorizeTable(tbl);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private void colorizeTable(JTable tbl) {
-        Color gl = new Color(102, 255, 153);
-        Color gd = new Color(0, 204, 68);
-        Color rl = new Color(255, 102, 102);
-        Color ol = new Color(255, 163, 102);
-        Color od = new Color(255, 117, 26);
-        tbl.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
-            @Override
-            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-                Component Component = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-                Component.setForeground(Color.WHITE);
-                Component.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 18));
-                Date today = new Date();
-                Date chequeDate = (Date) table.getValueAt(row, 5);
-                if (((String) table.getValueAt(row, 0)).equalsIgnoreCase("+")) {
-                    if (chequeDate.getTime() > today.getTime() && chequeDate.getTime() <= (today.getTime() + (1000 * 60 * 60 * 24 * 3))) {
-                        Component.setBackground(gd);
-                    } else if (chequeDate.getTime() < today.getTime()) {
-                        Component.setBackground(rl);
-                    } else {
-                        Component.setBackground(gl);
-                    }
-                } else if (((String) table.getValueAt(row, 0)).equalsIgnoreCase("-")) {
-                    if (chequeDate.getTime() > today.getTime() && chequeDate.getTime() <= (today.getTime() + (1000 * 60 * 60 * 24 * 3))) {
-                        Component.setBackground(od);
-                    } else if (chequeDate.getTime() < today.getTime()) {
-                        Component.setBackground(rl);
-                    } else {
-                        Component.setBackground(ol);
-                    }
-                } else {
-                    Component.setBackground(Color.black);
-                }
-                table.setSelectionForeground(Color.blue);
-                return Component;
-            }
-        });
     }
 
     private String returnCheque(String chequeNo) {

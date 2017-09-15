@@ -1717,7 +1717,7 @@
                                 </Property>
                               </Properties>
                               <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tbl_cheque.getTableHeader().setOpaque(false);&#xa;tbl_cheque.setShowVerticalLines(false);&#xa;tbl_cheque.setFont(new Font(Font.SANS_SERIF,Font.PLAIN,13));&#xa;tbl_cheque.getTableHeader().setFont(new Font(Font.SERIF, Font.BOLD, 14));&#xa;tbl_cheque.getTableHeader().setBackground(c.View.getInstance().tableHeaderColor);&#xa;jScrollPane10.getViewport().setBackground(Color.WHITE);&#xa;jScrollPane10.getViewport().setBorder(null);"/>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tbl_cheque.getTableHeader().setOpaque(false);&#xa;tbl_cheque.setShowVerticalLines(false);&#xa;tbl_cheque.setFont(new Font(Font.SANS_SERIF,Font.PLAIN,13));&#xa;tbl_cheque.setDefaultRenderer(Object.class, new tbl_cheque_color());&#xa;tbl_cheque.getTableHeader().setFont(new Font(Font.SERIF, Font.BOLD, 14));&#xa;tbl_cheque.getTableHeader().setBackground(c.View.getInstance().tableHeaderColor);&#xa;jScrollPane10.getViewport().setBackground(Color.WHITE);&#xa;jScrollPane10.getViewport().setBorder(null);"/>
                                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="tbl_cheque.setRowHeight(25);"/>
                                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                               </AuxValues>

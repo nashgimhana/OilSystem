@@ -5,6 +5,7 @@
  */
 package v;
 
+import c.tbl_cheque_color;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
@@ -900,6 +901,7 @@ public class Cash_Check_Book extends javax.swing.JPanel {
         tbl_cheque.getTableHeader().setOpaque(false);
         tbl_cheque.setShowVerticalLines(false);
         tbl_cheque.setFont(new Font(Font.SANS_SERIF,Font.PLAIN,13));
+        tbl_cheque.setDefaultRenderer(Object.class, new tbl_cheque_color());
         tbl_cheque.getTableHeader().setFont(new Font(Font.SERIF, Font.BOLD, 14));
         tbl_cheque.getTableHeader().setBackground(c.View.getInstance().tableHeaderColor);
         jScrollPane10.getViewport().setBackground(Color.WHITE);
