@@ -3047,10 +3047,10 @@ public class Delivery extends javax.swing.JPanel {
 
     public void resetAll() {
         dcDeleverDateSP.setDate(new Date());
-        txtRouteIdSP.setText("");
-        txtRouteNameSP.setText("");
-        txtVehicleNameSP.setText("");
-        txtVehicleIdSP.setText("");
+        //txtRouteIdSP.setText("");
+        //txtRouteNameSP.setText("");
+        //txtVehicleNameSP.setText("");
+        //txtVehicleIdSP.setText("");
         txtSPName.setText("");
         txtSPunit.setText("");
         txtTPName.setText("");
@@ -3061,8 +3061,8 @@ public class Delivery extends javax.swing.JPanel {
         txtTQty.setText("0");
         txtTC.setText("0");
         txtTPP.setText("0");
-        DefaultTableModel dtm = (DefaultTableModel) tblItemSP.getModel();
-        dtm.setRowCount(0);
+//        DefaultTableModel dtm = (DefaultTableModel) tblItemSP.getModel();
+//        dtm.setRowCount(0);
         txtRouteNameSP.requestFocus();
     }
 
