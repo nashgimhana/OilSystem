@@ -160,7 +160,7 @@ public class VehicleReturn {
                 v.add(itemList.getQuantity());
                 v.add("");
                 v.add(itemList.getGrnLog().getId());
-                v.add(itemList.getId());
+                v.add(itemList.getDelivery().getId());
                 dtm.addRow(v);
             }
             closeSession();

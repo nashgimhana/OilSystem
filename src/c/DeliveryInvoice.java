@@ -120,7 +120,7 @@ public class DeliveryInvoice {
                         qty = itemList.getQuantity();
                         v.add(txttotalValue.getText());
                         v.add(itemList.getGrnLog().getId());
-                        v.add(itemList.getId());
+                        v.add(itemList.getDelivery().getId());
                         dtm.addRow(v);
                         break;
                     } else {
@@ -203,13 +203,14 @@ public class DeliveryInvoice {
 
     Invoice invoice;
 
-    public int saveInvoice(JDateChooser dcSaleDate, String payStatus, JTextField txtCusId) {
+    public int saveInvoice(JDateChooser dcSaleDate, String payStatus, JTextField txtCusId, JTable tblDI) {
         ses = sessionFactory.openSession();
         int done = 0;
         try {
             invoice = new Invoice();
             invoice.setDate(dcSaleDate.getDate());
             invoice.setPayStatus(payStatus);
+            invoice.setDeliveryId(Integer.parseInt(tblDI.getValueAt(0, 6).toString()));
             Customer customer = new Customer();
             customer.setId(Integer.parseInt(txtCusId.getText()));
             invoice.setCustomer(customer);
@@ -233,7 +234,7 @@ public class DeliveryInvoice {
     public int saveInvoiceLog(JDateChooser dcSaleDate, String payStatus, JTextField txtCusId, JTable tblDI) {
         int done = 0;
         try {
-            int saveInvoice = saveInvoice(dcSaleDate, payStatus, txtCusId);
+            int saveInvoice = saveInvoice(dcSaleDate, payStatus, txtCusId, tblDI);
             if (saveInvoice == 1) {
                 for (int i = 0; i < tblDI.getRowCount(); i++) {
                     invoiceLog = new InvoiceLog();
@@ -279,7 +280,7 @@ public class DeliveryInvoice {
         } finally {
             ses.close();
         }
-        //updateDeliverQty(tblDI, id);
+        updateDeliverQty(tblDI, id);
     }
 
     public void getUnit(JTable tblDI, int id) {

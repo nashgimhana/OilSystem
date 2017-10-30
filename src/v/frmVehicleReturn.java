@@ -77,14 +77,14 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         dcReturnDate = new com.toedter.calendar.JDateChooser();
-        txtReturnItem = new javax.swing.JTextField();
-        txtRIQ = new javax.swing.JTextField();
         txtTotalSale = new javax.swing.JTextField();
+        txtSaleCash = new javax.swing.JTextField();
+        txtSaleAmountTot = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         txtCashAmount = new javax.swing.JTextField();
         txtCheckAmount = new javax.swing.JTextField();
@@ -153,37 +153,23 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         jLabel1.setText("Return Date");
         jPanel2.add(jLabel1);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Return Item");
-        jPanel2.add(jLabel2);
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Return Item Qty");
-        jPanel2.add(jLabel3);
-
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Total Sale");
         jPanel2.add(jLabel5);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Cash");
+        jPanel2.add(jLabel2);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("Total Amount ");
+        jPanel2.add(jLabel3);
 
         jPanel3.setLayout(new java.awt.GridLayout(4, 0, 5, 5));
 
         dcReturnDate.setDateFormatString("yyyy-MM-dd");
         dcReturnDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel3.add(dcReturnDate);
-
-        txtReturnItem.setBackground(new java.awt.Color(240, 240, 240));
-        txtReturnItem.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtReturnItem.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtReturnItem.setText("0");
-        txtReturnItem.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        jPanel3.add(txtReturnItem);
-
-        txtRIQ.setBackground(new java.awt.Color(240, 240, 240));
-        txtRIQ.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtRIQ.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtRIQ.setText("0");
-        txtRIQ.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        jPanel3.add(txtRIQ);
 
         txtTotalSale.setBackground(new java.awt.Color(240, 240, 240));
         txtTotalSale.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -208,6 +194,20 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             }
         });
         jPanel3.add(txtTotalSale);
+
+        txtSaleCash.setBackground(new java.awt.Color(240, 240, 240));
+        txtSaleCash.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtSaleCash.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtSaleCash.setText("0");
+        txtSaleCash.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        jPanel3.add(txtSaleCash);
+
+        txtSaleAmountTot.setBackground(new java.awt.Color(240, 240, 240));
+        txtSaleAmountTot.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtSaleAmountTot.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtSaleAmountTot.setText("0");
+        txtSaleAmountTot.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        jPanel3.add(txtSaleAmountTot);
 
         jPanel4.setLayout(new java.awt.GridLayout(4, 0, 5, 5));
 
@@ -723,7 +723,6 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         jPanel12.add(txtProductionCost);
 
         txGrossProfit.setEditable(false);
-        txGrossProfit.setBackground(new java.awt.Color(240, 240, 240));
         txGrossProfit.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txGrossProfit.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txGrossProfit.setText("0");
@@ -1639,9 +1638,9 @@ public class frmVehicleReturn extends javax.swing.JFrame {
     private javax.swing.JTextField txtDescrip;
     private javax.swing.JTextField txtPayAmount;
     private javax.swing.JTextField txtProductionCost;
-    private javax.swing.JTextField txtRIQ;
     private javax.swing.JTextField txtRemark;
-    private javax.swing.JTextField txtReturnItem;
+    private javax.swing.JTextField txtSaleAmountTot;
+    private javax.swing.JTextField txtSaleCash;
     private javax.swing.JTextField txtTotalSale;
     // End of variables declaration//GEN-END:variables
 }
