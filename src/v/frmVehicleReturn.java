@@ -53,7 +53,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
     static String deliverInfo;
     static Date deliverDate;
     static JTabbedPane tpDelivery;
-    
+
     public frmVehicleReturn(JTable itemTable, JTextField txtRouteId, String deliverInfo, Date deliverDate, JTabbedPane tpDelivery) {
         initComponents();
         frmVehicleReturn.itemTable = itemTable;
@@ -809,6 +809,8 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         vehicleReturn.calProductCost(itemTable, txtProductionCost);
         vehicleReturn.calDeleverCost(deliverInfo, deliverDate, txtDeleverCost);
         vehicleReturn.getInvoiceList(Integer.parseInt(itemTable.getValueAt(0, 6).toString()));
+        vehicleReturn.calInvoiceAmount(txtTotalSale);
+        txtSaleAmountTot.setText(txtTotalSale.getText());
         calGrossProfit();
     }//GEN-LAST:event_formWindowOpened
 
@@ -820,7 +822,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             txtCashAmount.setText(String.valueOf(Math.round(cashAmount * 100.0) / 100.0));
             try {
                 if (cmbCategory.getSelectedItem().toString().equals("Route Credit Pay")) {
-                    double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText()
+                    double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText())
                     if (creditAmount < 0) {
                         creditAmount = (creditAmount * -1);
                         txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -835,7 +837,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 e.printStackTrace();
             }
         } else if (cmbType.getSelectedItem().toString().equals("Expend")) {
-            if (txtTotalSale.getText().isEmpty()) {
+            if (txtSaleAmountTot.getText().isEmpty()) {
                 try {
                     double totalSale = 0.0;
                     double deliverCost = Double.parseDouble(txtDeleverCost.getText());
@@ -851,7 +853,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 }
             } else {
                 try {
-                    double totalSale = Double.parseDouble(txtTotalSale.getText());
+                    double totalSale = Double.parseDouble(txtSaleAmountTot.getText());
                     double deliverCost = Double.parseDouble(txtDeleverCost.getText());
                     deliverCost += Double.parseDouble(txtAmount.getText());
                     txtDeleverCost.setText(String.valueOf(Math.round(deliverCost * 100.0) / 100.0));
@@ -864,9 +866,9 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
-            
+
             try {
-                double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText()
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText())
                 if (creditAmount < 0) {
                     creditAmount = (creditAmount * -1);
                     txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -893,7 +895,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 cashAmount -= Double.parseDouble(tblCD.getValueAt(tblCD.getSelectedRow(), 2).toString());
                 txtCashAmount.setText(String.valueOf(Math.round(cashAmount * 100.0) / 100.0));
                 try {
-                    double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText()
+                    double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText())
                     if (creditAmount < 0) {
                         creditAmount = (creditAmount * -1);
                         txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -907,7 +909,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
             } else if (tblCD.getValueAt(tblCD.getSelectedRow(), 1).toString().equals("Expend")) {
-                if (txtTotalSale.getText().isEmpty()) {
+                if (txtSaleAmountTot.getText().isEmpty()) {
                     try {
                         double totalSale = 0.0;
                         double deliverCost = Double.parseDouble(txtDeleverCost.getText());
@@ -923,7 +925,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                     }
                 } else {
                     try {
-                        double totalSale = Double.parseDouble(txtTotalSale.getText());
+                        double totalSale = Double.parseDouble(txtSaleAmountTot.getText());
                         double deliverCost = Double.parseDouble(txtDeleverCost.getText());
                         deliverCost -= Double.parseDouble(tblCD.getValueAt(tblCD.getSelectedRow(), 2).toString());
                         txtDeleverCost.setText(String.valueOf(Math.round(deliverCost * 100.0) / 100.0));
@@ -936,9 +938,9 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 }
-                
+
                 try {
-                    double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText()
+                    double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText())
                     if (creditAmount < 0) {
                         creditAmount = (creditAmount * -1);
                         txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -958,15 +960,15 @@ public class frmVehicleReturn extends javax.swing.JFrame {
 
     private void txtTotalSaleFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTotalSaleFocusGained
         // TODO add your handling code here:
-        if ("0".equals(txtTotalSale.getText())) {
-            txtTotalSale.setText("");
+        if ("0".equals(txtSaleAmountTot.getText())) {
+            txtSaleAmountTot.setText("");
         }
     }//GEN-LAST:event_txtTotalSaleFocusGained
 
     private void txtTotalSaleFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTotalSaleFocusLost
         // TODO add your handling code here:
-        if ("".equals(txtTotalSale.getText())) {
-            txtTotalSale.setText("0");
+        if ("".equals(txtSaleAmountTot.getText())) {
+            txtSaleAmountTot.setText("0");
         }
     }//GEN-LAST:event_txtTotalSaleFocusLost
 
@@ -1029,13 +1031,13 @@ public class frmVehicleReturn extends javax.swing.JFrame {
     private void tblCDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblCDKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_tblCDKeyReleased
-    
+
     public void getReturnReport(JFrame frame) {
         try {
             String path = "C:\\Program Files\\Common Files\\Report\\VehicleReturn.jrxml";
             JasperReport RI = JasperCompileManager.compileReport(path);
             Map<String, Object> parameter = new HashMap<String, Object>();
-            parameter.put("TotalSale", Double.parseDouble(txtTotalSale.getText()));
+            parameter.put("TotalSale", Double.parseDouble(txtSaleAmountTot.getText()));
             parameter.put("CashAmount", Double.parseDouble(txtCashAmount.getText()));
             parameter.put("ChequeAmount", Double.parseDouble(txtCheckAmount.getText()));
             parameter.put("CreditPayAmount", Double.parseDouble(txtPayAmount.getText()));
@@ -1052,7 +1054,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(frame, e, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     public void createReportDocs() {
         Path path = Paths.get("D:\\ReportDocs");
         //if directory exists?
@@ -1067,11 +1069,11 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             createFile();
         }
     }
-    
+
     public void createFile() {
-        String[] para = {txtTotalSale.getText() + "/" + txtCashAmount.getText() + "/" + txtCheckAmount.getText() + "/" + txtPayAmount.getText() + "/" + txtCreditAmount.getText() + "/" + txtDeleverCost.getText() + "/" + txtProductionCost.getText() + "/" + txGrossProfit.getText() + "/" + txNetProfit.getText()};
+        String[] para = {txtSaleAmountTot.getText() + "/" + txtCashAmount.getText() + "/" + txtCheckAmount.getText() + "/" + txtPayAmount.getText() + "/" + txtCreditAmount.getText() + "/" + txtDeleverCost.getText() + "/" + txtProductionCost.getText() + "/" + txGrossProfit.getText() + "/" + txNetProfit.getText()};
         try {
-            
+
             File f = new File(new SimpleDateFormat("yyyy-MM-dd").format(deliverDate) + "/" + deliverInfo + ".txt");
             FileWriter writer = new FileWriter("D:\\ReportDocs\\" + new SimpleDateFormat("yyyy-MM-dd").format(deliverDate) + "_" + deliverInfo.split("/")[0] + "_" + deliverInfo.split("/")[1] + ".txt", true);
             writer.write(para[0]);
@@ -1086,7 +1088,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         c.VehicleReturn vehicleReturn = new c.VehicleReturn();
         int updateQty = vehicleReturn.updateQty(itemTable, tblCD, dcReturnDate);
         if (updateQty == 1) {
-            vehicleReturn.saveRouteDebit(dcReturnDate, "Total Deliver Sale", Double.parseDouble(txtTotalSale.getText()), "Cash", "Total Deliver Sale", "Income", txtRouteId);
+            vehicleReturn.saveRouteDebit(dcReturnDate, "Total Deliver Sale", Double.parseDouble(txtSaleAmountTot.getText()), "Cash", "Total Deliver Sale", "Income", txtRouteId);
             vehicleReturn.saveRouteDebit(dcReturnDate, "Deliver Cash", Double.parseDouble(txtCashAmount.getText()), "Cash", "Deliver Cash", "Income", txtRouteId);
             //vehicleReturn.saveRouteDebit(dcReturnDate, "Deliver Cheque", Double.parseDouble(txtCheckAmount.getText()), "Cheque", "Deliver Cheque", "Income", txtRouteId);
             vehicleReturn.saveCheck(dcReturnDate, txtRouteId, tblCheck);
@@ -1102,10 +1104,10 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnSaveMouseReleased
-    
+
     private void calGrossProfit() {
         try {
-            double totalSale = Double.parseDouble(txtTotalSale.getText());
+            double totalSale = Double.parseDouble(txtSaleAmountTot.getText());
             double deliverCost = Double.parseDouble(txtDeleverCost.getText());
             double productCost = Double.parseDouble(txtProductionCost.getText());
             double grossProfit = totalSale - (deliverCost + productCost);
@@ -1176,7 +1178,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                     txtCashAmount.setText(String.valueOf(Math.round(cashAmount * 100.0) / 100.0));
                     try {
                         if (cmbCategory.getSelectedItem().toString().equals("Route Credit Pay")) {
-                            double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText()
+                            double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText())
                             if (creditAmount < 0) {
                                 creditAmount = (creditAmount * -1);
                                 txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1191,7 +1193,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                         e.printStackTrace();
                     }
                 } else if (cmbType.getSelectedItem().toString().equals("Expend")) {
-                    if (txtTotalSale.getText().isEmpty()) {
+                    if (txtSaleAmountTot.getText().isEmpty()) {
                         try {
                             double totalSale = 0.0;
                             double deliverCost = Double.parseDouble(txtDeleverCost.getText());
@@ -1207,7 +1209,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                         }
                     } else {
                         try {
-                            double totalSale = Double.parseDouble(txtTotalSale.getText());
+                            double totalSale = Double.parseDouble(txtSaleAmountTot.getText());
                             double deliverCost = Double.parseDouble(txtDeleverCost.getText());
                             deliverCost += Double.parseDouble(txtAmount.getText());
                             txtDeleverCost.setText(String.valueOf(Math.round(deliverCost * 100.0) / 100.0));
@@ -1220,9 +1222,9 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
                         }
                     }
-                    
+
                     try {
-                        double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText()
+                        double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//  Double.parseDouble(txtCheckAmount.getText())+ Double.parseDouble(txtPayAmount.getText())
                         if (creditAmount < 0) {
                             creditAmount = (creditAmount * -1);
                             txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1255,7 +1257,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             if (!txtCashAmount.getText().isEmpty()) {
-                double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText()
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText()
                 if (creditAmount < 0) {
                     creditAmount = (creditAmount * -1);
                     txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1275,7 +1277,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             if (!txtCheckAmount.getText().isEmpty()) {
-                double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//+ Double.parseDouble(txtCheckAmount.getText())
                 if (creditAmount < 0) {
                     creditAmount = (creditAmount * -1);
                     txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1294,7 +1296,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             if (!txtPayAmount.getText().isEmpty()) {
-                double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText())
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));// + Double.parseDouble(txtPayAmount.getText())+ Double.parseDouble(txtCheckAmount.getText())
                 if (creditAmount < 0) {
                     creditAmount = (creditAmount * -1);
                     txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1316,7 +1318,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
     private void txtBankNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBankNameKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBankNameKeyTyped
-    
+
     private void calNetProfit() {
         try {
             if (txtCashAmount.getText().isEmpty()) {
@@ -1324,10 +1326,10 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 double chequeAmount = Double.parseDouble(txtCheckAmount.getText());
                 double CpayAmount = Double.parseDouble(txtPayAmount.getText());
                 double creditAmount = Double.parseDouble(txtCreditAmount.getText());
-                
+
                 double deliverCost = Double.parseDouble(txtDeleverCost.getText());
                 double productCost = Double.parseDouble(txtProductionCost.getText());
-                
+
                 double netProfit = (cashAmount + chequeAmount + creditAmount) - (deliverCost + productCost + CpayAmount);
                 txNetProfit.setText(String.valueOf(Math.round(netProfit * 100.0) / 100.0));
             } else {
@@ -1335,10 +1337,10 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 double chequeAmount = Double.parseDouble(txtCheckAmount.getText());
                 double CpayAmount = Double.parseDouble(txtPayAmount.getText());
                 double creditAmount = Double.parseDouble(txtCreditAmount.getText());
-                
+
                 double deliverCost = Double.parseDouble(txtDeleverCost.getText());
                 double productCost = Double.parseDouble(txtProductionCost.getText());
-                
+
                 double netProfit = (cashAmount + chequeAmount + creditAmount) - (deliverCost + productCost + CpayAmount);
                 txNetProfit.setText(String.valueOf(Math.round(netProfit * 100.0) / 100.0));
             }
@@ -1346,34 +1348,34 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    
+
     private void mineNetProfit() {
         try {
             double cashAmount = Double.parseDouble(txtCashAmount.getText());
             double chequeAmount = Double.parseDouble(txtCheckAmount.getText());
             double chequeAmount2 = Double.parseDouble(tblCheck.getValueAt(tblCheck.getSelectedRow(), 2).toString());
             double CpayAmount = Double.parseDouble(txtPayAmount.getText());
-            
+
             double deliverCost = Double.parseDouble(txtDeleverCost.getText());
             double productCost = Double.parseDouble(txtProductionCost.getText());
-            
+
             double netProfit = (cashAmount + chequeAmount) - (deliverCost + productCost + chequeAmount2);
             txNetProfit.setText(String.valueOf(Math.round(netProfit * 100.0) / 100.0));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
     private void mineNetProfit(int i) {
         try {
             double cashAmount = Double.parseDouble(txtCashAmount.getText());
             double chequeAmount = Double.parseDouble(txtCheckAmount.getText());
             double chequeAmount2 = Double.parseDouble(tblCheck.getValueAt(i, 2).toString());
             double CpayAmount = Double.parseDouble(txtPayAmount.getText());
-            
+
             double deliverCost = Double.parseDouble(txtDeleverCost.getText());
             double productCost = Double.parseDouble(txtProductionCost.getText());
-            
+
             double netProfit = (cashAmount + chequeAmount) - (deliverCost + productCost + chequeAmount2);
             txNetProfit.setText(String.valueOf(Math.round(netProfit * 100.0) / 100.0));
         } catch (Exception e) {
@@ -1389,8 +1391,8 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 double Amount = Double.parseDouble(txtCAmount.getText());
                 checkAmount += Amount;
                 txtCheckAmount.setText(String.valueOf(checkAmount));
-                
-                double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()));// + Double.parseDouble(txtPayAmount.getText())  + Double.parseDouble(txtCheckAmount.getText())
+
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//   + Double.parseDouble(txtCheckAmount.getText())
                 if (creditAmount < 0) {
                     creditAmount = (creditAmount * -1);
                     txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1399,9 +1401,9 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                     txtCreditAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
                     txtPayAmount.setText("0");
                 }
-                
+
                 calNetProfit();
-                
+
                 new VehicleReturn().addCheck(txtCheckNumber, txtBankName, txtCAmount, dcReturnDate1, txtDescrip, tblCheck);
             }
         }
@@ -1420,10 +1422,10 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 double Amount = Double.parseDouble(tblCheck.getValueAt(i, 2).toString());
                 checkAmount -= Amount;
                 txtCheckAmount.setText(String.valueOf(checkAmount));
-                
-                double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//+ Double.parseDouble(txtCheckAmount.getText())
+
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//+ Double.parseDouble(txtCheckAmount.getText())
                 txtCreditAmount.setText(String.valueOf(creditAmount));
-                
+
             }
             new c.DeleveryItemTable().removeAllItem(tblCheck);
         } else if (evt.getKeyChar() == KeyEvent.VK_DELETE) {
@@ -1432,10 +1434,10 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             double Amount = Double.parseDouble(tblCheck.getValueAt(tblCheck.getSelectedRow(), 2).toString());
             checkAmount -= Amount;
             txtCheckAmount.setText(String.valueOf(checkAmount));
-            
-            double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//+ Double.parseDouble(txtCheckAmount.getText())
+
+            double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//+ Double.parseDouble(txtCheckAmount.getText())
             txtCreditAmount.setText(String.valueOf(creditAmount));
-            
+
             new c.DeleveryItemTable().removeItem(tblCheck);
         }
     }//GEN-LAST:event_tblCheckKeyTyped
@@ -1470,7 +1472,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
 
     private void txtTotalSaleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotalSaleKeyReleased
         // TODO add your handling code here:
-        if (txtTotalSale.getText().isEmpty()) {
+        if (txtSaleAmountTot.getText().isEmpty()) {
             try {
                 double totalSale = 0.0;
                 double deliverCost = Double.parseDouble(txtDeleverCost.getText());
@@ -1483,7 +1485,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             }
         } else {
             try {
-                double totalSale = Double.parseDouble(txtTotalSale.getText());
+                double totalSale = Double.parseDouble(txtSaleAmountTot.getText());
                 double deliverCost = Double.parseDouble(txtDeleverCost.getText());
                 double productCost = Double.parseDouble(txtProductionCost.getText());
                 double grossProfit = totalSale - (deliverCost + productCost);
@@ -1508,8 +1510,8 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                     double Amount = Double.parseDouble(txtCAmount.getText());
                     checkAmount += Amount;
                     txtCheckAmount.setText(String.valueOf(checkAmount));
-                    
-                    double creditAmount = Double.parseDouble(txtTotalSale.getText()) - (Double.parseDouble(txtCashAmount.getText()));// + Double.parseDouble(txtPayAmount.getText()) + Double.parseDouble(txtCheckAmount.getText())
+
+                    double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText())
                     if (creditAmount < 0) {
                         creditAmount = (creditAmount * -1);
                         txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1518,9 +1520,9 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                         txtCreditAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
                         txtPayAmount.setText("0");
                     }
-                    
+
                     calNetProfit();
-                    
+
                     new VehicleReturn().addCheck(txtCheckNumber, txtBankName, txtCAmount, dcReturnDate1, txtDescrip, tblCheck);
                 }
             }
