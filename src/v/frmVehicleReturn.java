@@ -1570,6 +1570,13 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             double total = totalSale + invoiceSale;
 
             txtSaleAmountTot.setText(Double.toString(total));
+        } else {
+            double totalSale = Double.parseDouble(txtTotalSale.getText());
+            double invoiceSale = 0;
+
+            double total = totalSale + invoiceSale;
+
+            txtSaleAmountTot.setText(Double.toString(total));
         }
     }
     private void txtTotalSaleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotalSaleKeyReleased
