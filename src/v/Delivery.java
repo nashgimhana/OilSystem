@@ -3560,6 +3560,9 @@ public class Delivery extends javax.swing.JPanel {
             parameter.put("ProductCost", Double.parseDouble(data[6]));
             parameter.put("GrossProfit", Double.parseDouble(data[7]));
             parameter.put("NetProfit", Double.parseDouble(data[8]));
+            parameter.put("DeleverDate", ((JTextField)dcDeleverDateR.getDateEditor().getUiComponent()).getText());
+            parameter.put("RouteId", txtRouteIdR.getText());
+            parameter.put("VehicleId", txtVehicleIdR.getText());
             JasperPrint printit = JasperFillManager.fillReport(RI, parameter, new JREmptyDataSource());
             //JasperPrintManager.printReport(printit, false);
             JasperViewer.viewReport(printit, false);
