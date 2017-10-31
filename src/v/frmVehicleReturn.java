@@ -1178,7 +1178,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                     txtCashAmount.setText(String.valueOf(Math.round(cashAmount * 100.0) / 100.0));
                     try {
                         if (cmbCategory.getSelectedItem().toString().equals("Route Credit Pay")) {
-                            double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText())
+                            double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));// + Double.parseDouble(txtPayAmount.getText())
                             if (creditAmount < 0) {
                                 creditAmount = (creditAmount * -1);
                                 txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1224,7 +1224,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                     }
 
                     try {
-                        double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//  Double.parseDouble(txtCheckAmount.getText())+ Double.parseDouble(txtPayAmount.getText())
+                        double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));//  Double.parseDouble(txtCheckAmount.getText())+ Double.parseDouble(txtPayAmount.getText())
                         if (creditAmount < 0) {
                             creditAmount = (creditAmount * -1);
                             txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1257,7 +1257,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             if (!txtCashAmount.getText().isEmpty()) {
-                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtCheckAmount.getText()));// + Double.parseDouble(txtPayAmount.getText()
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));// 
                 if (creditAmount < 0) {
                     creditAmount = (creditAmount * -1);
                     txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1296,7 +1296,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             if (!txtPayAmount.getText().isEmpty()) {
-                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));// + Double.parseDouble(txtPayAmount.getText())+ Double.parseDouble(txtCheckAmount.getText())
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));// + Double.parseDouble(txtCheckAmount.getText())
                 if (creditAmount < 0) {
                     creditAmount = (creditAmount * -1);
                     txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
