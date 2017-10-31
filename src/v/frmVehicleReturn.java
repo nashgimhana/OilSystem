@@ -1273,7 +1273,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             if (!txtCashAmount.getText().isEmpty()) {
-                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));// 
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));
                 if (creditAmount < 0) {
                     creditAmount = (creditAmount * -1);
                     txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1293,7 +1293,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             if (!txtCheckAmount.getText().isEmpty()) {
-                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//+ Double.parseDouble(txtCheckAmount.getText())
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));//+ Double.parseDouble(txtCheckAmount.getText())
                 if (creditAmount < 0) {
                     creditAmount = (creditAmount * -1);
                     txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1346,7 +1346,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 double deliverCost = Double.parseDouble(txtDeleverCost.getText());
                 double productCost = Double.parseDouble(txtProductionCost.getText());
 
-                double netProfit = (cashAmount + chequeAmount + creditAmount) - (deliverCost + productCost + CpayAmount);
+                double netProfit = (cashAmount + creditAmount) - (deliverCost + productCost + CpayAmount);
                 txNetProfit.setText(String.valueOf(Math.round(netProfit * 100.0) / 100.0));
             } else {
                 double cashAmount = Double.parseDouble(txtCashAmount.getText());
@@ -1357,7 +1357,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 double deliverCost = Double.parseDouble(txtDeleverCost.getText());
                 double productCost = Double.parseDouble(txtProductionCost.getText());
 
-                double netProfit = (cashAmount + chequeAmount + creditAmount) - (deliverCost + productCost + CpayAmount);
+                double netProfit = (cashAmount + creditAmount) - (deliverCost + productCost + CpayAmount);
                 txNetProfit.setText(String.valueOf(Math.round(netProfit * 100.0) / 100.0));
             }
         } catch (Exception e) {
@@ -1375,7 +1375,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             double deliverCost = Double.parseDouble(txtDeleverCost.getText());
             double productCost = Double.parseDouble(txtProductionCost.getText());
 
-            double netProfit = (cashAmount + chequeAmount) - (deliverCost + productCost + chequeAmount2);
+            double netProfit = (cashAmount) - (deliverCost + productCost);
             txNetProfit.setText(String.valueOf(Math.round(netProfit * 100.0) / 100.0));
         } catch (Exception e) {
             e.printStackTrace();
@@ -1392,7 +1392,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             double deliverCost = Double.parseDouble(txtDeleverCost.getText());
             double productCost = Double.parseDouble(txtProductionCost.getText());
 
-            double netProfit = (cashAmount + chequeAmount) - (deliverCost + productCost + chequeAmount2);
+            double netProfit = (cashAmount) - (deliverCost + productCost);
             txNetProfit.setText(String.valueOf(Math.round(netProfit * 100.0) / 100.0));
         } catch (Exception e) {
             e.printStackTrace();
@@ -1408,7 +1408,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 checkAmount += Amount;
                 txtCheckAmount.setText(String.valueOf(checkAmount));
 
-                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//   + Double.parseDouble(txtCheckAmount.getText())
+                double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));//   + Double.parseDouble(txtCheckAmount.getText())+ Double.parseDouble(txtPayAmount.getText())
                 if (creditAmount < 0) {
                     creditAmount = (creditAmount * -1);
                     txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -1433,7 +1433,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (evt.isControlDown() & evt.getKeyChar() == KeyEvent.VK_DELETE) {
             for (int i = 0; i < tblCheck.getRowCount(); i++) {
-                mineNetProfit(i);
+                //mineNetProfit(i);
                 double checkAmount = Double.parseDouble(txtCheckAmount.getText());
                 double Amount = Double.parseDouble(tblCheck.getValueAt(i, 2).toString());
                 checkAmount -= Amount;
@@ -1445,7 +1445,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             }
             new c.DeleveryItemTable().removeAllItem(tblCheck);
         } else if (evt.getKeyChar() == KeyEvent.VK_DELETE) {
-            mineNetProfit();
+            //mineNetProfit();
             double checkAmount = Double.parseDouble(txtCheckAmount.getText());
             double Amount = Double.parseDouble(tblCheck.getValueAt(tblCheck.getSelectedRow(), 2).toString());
             checkAmount -= Amount;
@@ -1527,7 +1527,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                     checkAmount += Amount;
                     txtCheckAmount.setText(String.valueOf(checkAmount));
 
-                    double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText())
+                    double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText()) + Double.parseDouble(txtPayAmount.getText())
                     if (creditAmount < 0) {
                         creditAmount = (creditAmount * -1);
                         txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
