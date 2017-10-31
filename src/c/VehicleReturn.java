@@ -30,6 +30,8 @@ import pojo.Cheques;
 import pojo.Delivery;
 import pojo.DeliveryItemLog;
 import pojo.Grn;
+import pojo.Invoice;
+import pojo.InvoiceLog;
 import pojo.MoneyBook;
 import pojo.Product;
 
@@ -652,6 +654,60 @@ public class VehicleReturn {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    ArrayList<Invoice> invoice;
+
+    public void getInvoiceList(int deliverId) {
+        ses = conn.NewHibernateUtil.getSessionFactory().openSession();
+        try {
+            Criteria cr = ses.createCriteria(pojo.Invoice.class);
+            cr.add(Restrictions.eq("deliveryId", deliverId));
+            invoice = (ArrayList<Invoice>) cr.list();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Errormzg.displayerrorMessage(e.toString());
+        } finally {
+            ses.close();
+        }
+    }
+
+    public void calInvoiceAmount(JTextField txtTotalSale) {
+        for (Invoice invoice01 : invoice) {
+            calAmount(invoice01);
+            totalAmount += amount;
+        }
+        txtTotalSale.setText(Double.toString(totalAmount));
+        totalAmount = 0;
+        amount = 0;
+    }
+
+    ArrayList<InvoiceLog> invoiceLogs;
+
+    double amount, totalAmount;
+
+    public void calAmount(Invoice invoice01) {
+        ses = conn.NewHibernateUtil.getSessionFactory().openSession();
+        try {
+            Criteria cr = ses.createCriteria(pojo.InvoiceLog.class);
+            cr.add(Restrictions.eq("invoice", invoice01));
+            invoiceLogs = (ArrayList<InvoiceLog>) cr.list();
+
+            for (InvoiceLog iLogs : invoiceLogs) {
+                System.out.println("Item Amount: " + amount);
+                amount += iLogs.getTotal();
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Errormzg.displayerrorMessage(e.toString());
+        } finally {
+            ses.close();
+        }
+    }
+
+    public void calTotalSale() {
+
     }
 
     public void calDeleverCost(String deliverInfo, Date deliverDate, JTextField txtDeleverCost) {

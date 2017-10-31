@@ -280,7 +280,7 @@ public class DeliveryInvoice {
         } finally {
             ses.close();
         }
-        updateDeliverQty(tblDI, id);
+        //updateDeliverQty(tblDI, id);
     }
 
     public void getUnit(JTable tblDI, int id) {
