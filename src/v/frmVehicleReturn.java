@@ -911,7 +911,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 cashAmount -= Double.parseDouble(tblCD.getValueAt(tblCD.getSelectedRow(), 2).toString());
                 txtCashAmount.setText(String.valueOf(Math.round(cashAmount * 100.0) / 100.0));
                 try {
-                    double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText())
+                    double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText())
                     if (creditAmount < 0) {
                         creditAmount = (creditAmount * -1);
                         txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
@@ -956,7 +956,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 }
 
                 try {
-                    double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()) + Double.parseDouble(txtPayAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText())
+                    double creditAmount = Double.parseDouble(txtSaleAmountTot.getText()) - (Double.parseDouble(txtCashAmount.getText()));//  + Double.parseDouble(txtCheckAmount.getText())
                     if (creditAmount < 0) {
                         creditAmount = (creditAmount * -1);
                         txtPayAmount.setText(String.valueOf(Math.round(creditAmount * 100) / 100));
