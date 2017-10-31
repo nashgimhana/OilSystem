@@ -5,6 +5,7 @@
  */
 package v;
 
+import Backup.ConnectDB;
 import c.AssetControl;
 import c.AutoComplete;
 import c.VehicleReturn;
@@ -1065,7 +1066,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             parameter.put("DeleverDate", new SimpleDateFormat("yyyy-MM-dd").format(deliverDate));
             parameter.put("RouteId", deliverInfo.split("/")[0]);
             parameter.put("VehicleId", deliverInfo.split("/")[1]);
-            JasperPrint printit = JasperFillManager.fillReport(RI, parameter);
+            JasperPrint printit = JasperFillManager.fillReport(RI, parameter, ConnectDB.getConn());
             //JasperPrint printit = JasperFillManager.fillRepor
             //JasperPrintManager.printReport(printit, false);
             JasperViewer.viewReport(printit, false);
