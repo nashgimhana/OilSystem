@@ -82,8 +82,8 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         dcReturnDate = new com.toedter.calendar.JDateChooser();
+        txtInvoiceSale = new javax.swing.JTextField();
         txtTotalSale = new javax.swing.JTextField();
-        txtSaleCash = new javax.swing.JTextField();
         txtSaleAmountTot = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         txtCashAmount = new javax.swing.JTextField();
@@ -154,11 +154,11 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         jPanel2.add(jLabel1);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Total Sale");
+        jLabel5.setText("Invoice Sale");
         jPanel2.add(jLabel5);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Cash");
+        jLabel2.setText("Total Sale");
         jPanel2.add(jLabel2);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -171,12 +171,35 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         dcReturnDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel3.add(dcReturnDate);
 
+        txtInvoiceSale.setBackground(new java.awt.Color(240, 240, 240));
+        txtInvoiceSale.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtInvoiceSale.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtInvoiceSale.setText("0");
+        txtInvoiceSale.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
+        txtInvoiceSale.setNextFocusableComponent(txtCashAmount);
+        txtInvoiceSale.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtInvoiceSaleFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtInvoiceSaleFocusLost(evt);
+            }
+        });
+        txtInvoiceSale.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtInvoiceSaleKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtInvoiceSaleKeyTyped(evt);
+            }
+        });
+        jPanel3.add(txtInvoiceSale);
+
         txtTotalSale.setBackground(new java.awt.Color(240, 240, 240));
         txtTotalSale.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtTotalSale.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtTotalSale.setText("0");
         txtTotalSale.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        txtTotalSale.setNextFocusableComponent(txtCashAmount);
         txtTotalSale.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtTotalSaleFocusGained(evt);
@@ -194,13 +217,6 @@ public class frmVehicleReturn extends javax.swing.JFrame {
             }
         });
         jPanel3.add(txtTotalSale);
-
-        txtSaleCash.setBackground(new java.awt.Color(240, 240, 240));
-        txtSaleCash.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtSaleCash.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtSaleCash.setText("0");
-        txtSaleCash.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(51, 153, 255)));
-        jPanel3.add(txtSaleCash);
 
         txtSaleAmountTot.setBackground(new java.awt.Color(240, 240, 240));
         txtSaleAmountTot.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -809,8 +825,8 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         vehicleReturn.calProductCost(itemTable, txtProductionCost);
         vehicleReturn.calDeleverCost(deliverInfo, deliverDate, txtDeleverCost);
         vehicleReturn.getInvoiceList(Integer.parseInt(itemTable.getValueAt(0, 6).toString()));
-        vehicleReturn.calInvoiceAmount(txtTotalSale);
-        txtSaleAmountTot.setText(txtTotalSale.getText());
+        vehicleReturn.calInvoiceAmount(txtInvoiceSale);
+        txtSaleAmountTot.setText(txtInvoiceSale.getText());
         calGrossProfit();
     }//GEN-LAST:event_formWindowOpened
 
@@ -958,19 +974,19 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tblCDKeyTyped
 
-    private void txtTotalSaleFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTotalSaleFocusGained
+    private void txtInvoiceSaleFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtInvoiceSaleFocusGained
         // TODO add your handling code here:
         if ("0".equals(txtSaleAmountTot.getText())) {
             txtSaleAmountTot.setText("");
         }
-    }//GEN-LAST:event_txtTotalSaleFocusGained
+    }//GEN-LAST:event_txtInvoiceSaleFocusGained
 
-    private void txtTotalSaleFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTotalSaleFocusLost
+    private void txtInvoiceSaleFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtInvoiceSaleFocusLost
         // TODO add your handling code here:
         if ("".equals(txtSaleAmountTot.getText())) {
             txtSaleAmountTot.setText("0");
         }
-    }//GEN-LAST:event_txtTotalSaleFocusLost
+    }//GEN-LAST:event_txtInvoiceSaleFocusLost
 
     private void txtCashAmountFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCashAmountFocusGained
         // TODO add your handling code here:
@@ -1118,7 +1134,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         }
     }
 
-    private void txtTotalSaleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotalSaleKeyTyped
+    private void txtInvoiceSaleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInvoiceSaleKeyTyped
         // TODO add your handling code here:
         char vChar = evt.getKeyChar();
         if (!(Character.isDigit(vChar)
@@ -1126,7 +1142,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 || (vChar == KeyEvent.VK_DELETE) || vChar == KeyEvent.VK_PERIOD)) {
             evt.consume();
         }
-    }//GEN-LAST:event_txtTotalSaleKeyTyped
+    }//GEN-LAST:event_txtInvoiceSaleKeyTyped
 
     private void txtCashAmountKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCashAmountKeyTyped
         // TODO add your handling code here:
@@ -1470,7 +1486,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtCAmountFocusLost
 
-    private void txtTotalSaleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotalSaleKeyReleased
+    private void txtInvoiceSaleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInvoiceSaleKeyReleased
         // TODO add your handling code here:
         if (txtSaleAmountTot.getText().isEmpty()) {
             try {
@@ -1495,7 +1511,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-    }//GEN-LAST:event_txtTotalSaleKeyReleased
+    }//GEN-LAST:event_txtInvoiceSaleKeyReleased
 
     private void txtCashAmountKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCashAmountKeyPressed
         // TODO add your handling code here:
@@ -1545,6 +1561,45 @@ public class frmVehicleReturn extends javax.swing.JFrame {
         // TODO add your handling code here:
         getReturnReport(this);
     }//GEN-LAST:event_btnReportMouseReleased
+
+    private void calTotalSaleAmount() {
+        if (!txtTotalSale.getText().isEmpty()) {
+            double totalSale = Double.parseDouble(txtTotalSale.getText());
+            double invoiceSale = Double.parseDouble(txtInvoiceSale.getText());
+
+            double total = totalSale + invoiceSale;
+
+            txtSaleAmountTot.setText(Double.toString(total));
+        }
+    }
+    private void txtTotalSaleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotalSaleKeyReleased
+        // TODO add your handling code here:
+        calTotalSaleAmount();
+    }//GEN-LAST:event_txtTotalSaleKeyReleased
+
+    private void txtTotalSaleFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTotalSaleFocusGained
+        // TODO add your handling code here:
+        if (txtTotalSale.getText().equals("0")) {
+            txtTotalSale.setText("");
+        }
+    }//GEN-LAST:event_txtTotalSaleFocusGained
+
+    private void txtTotalSaleFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTotalSaleFocusLost
+        // TODO add your handling code here:
+        if (txtTotalSale.getText().equals("")) {
+            txtTotalSale.setText("0");
+        }
+    }//GEN-LAST:event_txtTotalSaleFocusLost
+
+    private void txtTotalSaleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotalSaleKeyTyped
+        // TODO add your handling code here:
+        char vChar = evt.getKeyChar();
+        if (!(Character.isDigit(vChar)
+                || (vChar == KeyEvent.VK_BACK_SPACE)
+                || (vChar == KeyEvent.VK_DELETE) || vChar == KeyEvent.VK_PERIOD)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTotalSaleKeyTyped
 
     /**
      * @param args the command line arguments
@@ -1639,11 +1694,11 @@ public class frmVehicleReturn extends javax.swing.JFrame {
     private javax.swing.JTextField txtCreditAmount;
     private javax.swing.JTextField txtDeleverCost;
     private javax.swing.JTextField txtDescrip;
+    private javax.swing.JTextField txtInvoiceSale;
     private javax.swing.JTextField txtPayAmount;
     private javax.swing.JTextField txtProductionCost;
     private javax.swing.JTextField txtRemark;
     private javax.swing.JTextField txtSaleAmountTot;
-    private javax.swing.JTextField txtSaleCash;
     private javax.swing.JTextField txtTotalSale;
     // End of variables declaration//GEN-END:variables
 }
