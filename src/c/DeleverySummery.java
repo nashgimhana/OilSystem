@@ -27,6 +27,7 @@ import pojo.Product;
 import pojo.RouteReg;
 import pojo.Units;
 import pojo.Vehicle;
+import v.DiliveryLoad;
 
 /**
  *
@@ -70,6 +71,7 @@ public class DeleverySummery {
             int saveLoad = new m.DelevrySummery().saveLoad(delivery);
             if (saveLoad == 1) {
                 done = saveLoadItem(delivery);
+                new DiliveryLoad().savediliveryload(itemJTable, delivery);
             }
         } catch (Exception e) {
             Errormzg.displayerrorMessage(e.toString());
