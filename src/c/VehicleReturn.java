@@ -34,6 +34,7 @@ import pojo.Invoice;
 import pojo.InvoiceLog;
 import pojo.MoneyBook;
 import pojo.Product;
+import v.DiliveryLoad;
 
 /**
  *
@@ -352,6 +353,7 @@ public class VehicleReturn {
                 done = updateLoadQty(itemTable, i);
             }
             if (done == 1) {
+              new DiliveryLoad().savediliveryload(itemTable, delever);
                 notifyCreater.getNotificationPopup("Quantity update done", 2000, NotificationIcon.information);
                 saveCashTable(cashTable, dcReturnDate);
             }

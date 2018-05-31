@@ -70,8 +70,7 @@ public class DeleverySummery {
 
             int saveLoad = new m.DelevrySummery().saveLoad(delivery);
             if (saveLoad == 1) {
-                done = saveLoadItem(delivery);
-                new DiliveryLoad().savediliveryload(itemJTable, delivery);
+                done = saveLoadItem(delivery);           
             }
         } catch (Exception e) {
             Errormzg.displayerrorMessage(e.toString());
