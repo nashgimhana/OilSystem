@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package v;
 
 import Backup.ConnectDB;
@@ -1051,7 +1047,7 @@ public class frmVehicleReturn extends javax.swing.JFrame {
 
     public void getReturnReport(JFrame frame) {
         try {
-            String path = "C:\\Program Files\\Common Files\\Report\\VehicleReturn.jrxml";
+            String path = "C:\\Program Files\\Common Files\\Report\\VehicleReturn_2.jrxml";
             JasperReport RI = JasperCompileManager.compileReport(path);
             Map<String, Object> parameter = new HashMap<String, Object>();
             parameter.put("TotalSale", Double.parseDouble(txtSaleAmountTot.getText()));
