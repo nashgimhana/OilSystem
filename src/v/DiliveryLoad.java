@@ -21,7 +21,11 @@ public class DiliveryLoad {
 
     public void savediliveryload(JTable table, pojo.Delivery d) {
         try {
+            System.out.println("calling");
             for (int i = 0; i < table.getRowCount(); i++) {
+                System.out.println("dil id = " + d.getId());
+
+                System.out.println("prodct " + table.getValueAt(i, 0).toString());
                 pojo.DiliveryLoad load = new pojo.DiliveryLoad();
                 Product p = new m.Product().getByName(table.getValueAt(i, 0).toString());
                 load.setProduct(p);
