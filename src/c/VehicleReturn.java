@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import m.DeliverDetail;
 import m.NotificationCreater;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -353,7 +354,8 @@ public class VehicleReturn {
                 done = updateLoadQty(itemTable, i);
             }
             if (done == 1) {
-              new DiliveryLoad().savediliveryload(itemTable, delever);
+                getDelevery(DeliverDetail.getTxtVehicleIdVR(), DeliverDetail.getTxtRouteIdVR(), DeliverDetail.getDcDeleverDateVR());
+                new DiliveryLoad().savediliveryload(itemTable, delever);
                 notifyCreater.getNotificationPopup("Quantity update done", 2000, NotificationIcon.information);
                 saveCashTable(cashTable, dcReturnDate);
             }
